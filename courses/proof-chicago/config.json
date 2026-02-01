@@ -5,23 +5,41 @@
   "style_guide_edition": "17th edition, 2017",
   "focus": "fiction",
   "duration_days": 10,
-  "description": "Master proofreading fiction using the Chicago Manual of Style — the standard for American trade publishing. Learn to handle dialogue, narrative consistency, and the conventions of US literary publishing.",
-  "audience": ["US fiction publishers", "Literary agents", "Freelance proofreaders", "Editorial assistants"],
-  "status": "active",
+  "description": "Master proofreading fiction using the Chicago Manual of Style — the standard for American trade publishing. Learn American dialogue conventions, punctuation placement, and the specific rules that differ from British style.",
+  
   "conventions": {
+    "dialogue_quotes": "Double quotes for speech",
+    "nested_quotes": "Single inside double",
+    "punctuation_placement": "American style (always inside closing quote)",
+    "parenthetical_dash": "Closed em-dash (no spaces)",
+    "interrupted_speech": "Closed em-dash",
+    "ellipsis": "Three dots (Chicago prefers spaced . . . but closed ... accepted)",
+    "thoughts": "Italics preferred, no quotation marks",
     "spelling": "American (-ize, -or, -er)",
-    "quote_style": "Double quotes first, single inside",
-    "punctuation_with_quotes": "American style (inside quotes always)",
-    "dashes": "Closed em-dash (no spaces)",
-    "date_format": "February 1, 2026",
+    "date_format": "July 4, 2026",
     "serial_comma": "Required"
   },
+  
   "fiction_topics": [
-    "Dialogue punctuation",
+    "Dialogue punctuation (American conventions)",
+    "Punctuation inside quotes (the American rule)",
+    "Em-dash usage (closed, no spaces)",
+    "Ellipsis formatting",
+    "Internal thoughts (italics)",
     "Character name consistency",
     "Timeline and continuity",
-    "Narrative voice",
-    "Scene breaks",
-    "Chapter formatting"
-  ]
+    "Numbers in dialogue",
+    "Style sheet creation"
+  ],
+  
+  "key_differences_from_british": [
+    "Double quotes vs single",
+    "Punctuation inside vs logical placement",
+    "Closed em-dash vs spaced en-dash",
+    "Thoughts in italics vs quotes",
+    "Date format Month Day, Year"
+  ],
+  
+  "status": "active",
+  "audience": ["US fiction publishers", "Literary agents (US)", "American trade publishing", "Freelance proofreaders (US market)"]
 }

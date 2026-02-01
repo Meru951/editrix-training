@@ -143,10 +143,10 @@ He turned and walked away. Eleanor waited until his footsteps faded, then opened
 
 | Error # | Location | Type | Error Text | Correction |
 |---------|----------|------|------------|------------|
-| 1 | Ch 1 | Date format | 4th July | 4 July |
+| 1 | Ch 1 | Date format | 4th July | 4 July (Hart's: no ordinal suffixes) |
 | 2 | Ch 1 | Apostrophe | evenings party | evening's party |
-| 3 | Ch 1 | Hyphenation | no-one | no one (or keep if house style) |
-| 4 | Ch 1 | Hyphenation | house-maid | housemaid |
+| 3 | Ch 1 | Hyphenation | no-one | no one (Hart's prefers open) |
+| 4 | Ch 1 | Hyphenation | house-maid | housemaid (closed compound per OED) |
 | 5 | Ch 2 | Capitalisation | three acres | query: specify? |
 | 6 | Ch 2 | Consistency | grey eyes / gray | pick one |
 | 7 | Ch 2 | Spelling | Phillipines | Philippines |

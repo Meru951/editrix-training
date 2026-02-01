@@ -337,6 +337,75 @@
       margin-bottom: 2rem;
     }
     
+    /* Course Cards */
+    .course-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+    
+    .course-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.75rem;
+      text-align: center;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    
+    .course-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+    
+    .course-flag {
+      font-size: 2.5rem;
+      margin-bottom: 0.75rem;
+    }
+    
+    .course-card h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+    
+    .course-guide {
+      color: var(--accent);
+      font-size: 0.9rem;
+      font-style: italic;
+      margin-bottom: 0.75rem !important;
+    }
+    
+    .course-desc {
+      font-size: 0.9rem;
+      color: var(--ink-light);
+      margin-bottom: 1.25rem !important;
+    }
+    
+    .course-apply {
+      display: inline-block;
+      background: var(--accent);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: background 0.2s;
+    }
+    
+    .course-apply:hover {
+      background: var(--accent-hover);
+    }
+    
+    .course-note {
+      font-size: 0.9rem;
+      color: var(--ink-light);
+      text-align: center;
+      margin-top: 1rem;
+    }
+    
     /* Footer */
     footer {
       text-align: center;
@@ -368,8 +437,8 @@
   <section class="hero">
     <div class="container">
       <h1>Learn Professional Proofreading in 10 Days</h1>
-      <p class="subtitle">A structured training programme for aspiring editors. Complete it, and you'll be ready for real work.</p>
-      <a href="mailto:diana-editrix@agentmail.to?subject=Application%20for%20Editor%20Training&body=Hi%20Diana%2C%0A%0AI'd%20like%20to%20apply%20for%20the%20Proofreading%20Programme.%0A%0AMy%20name%3A%20%0AMy%20timezone%3A%20%0AWhy%20I%20want%20to%20learn%20proofreading%3A%20%0A%0AI%20can%20commit%201-2%20hours%20daily%20for%2010%20days.%0A%0AThank%20you!" class="cta-button">Apply for the Programme</a>
+      <p class="subtitle">A structured training programme for aspiring fiction editors. Complete it, and you'll be ready for real work.</p>
+      <a href="#choose-course" class="cta-button">Apply for the Programme</a>
       <p class="cta-note">Free. Focused. For people who finish what they start.</p>
     </div>
   </section>
@@ -484,13 +553,41 @@
     </div>
   </section>
   
+  <!-- Choose Your Course -->
+  <section id="choose-course">
+    <div class="container">
+      <h2>Choose Your Course</h2>
+      <p>Two courses. Same rigorous training. Pick the style guide that matches your market.</p>
+      
+      <div class="course-cards">
+        <div class="course-card">
+          <div class="course-flag">🇬🇧</div>
+          <h3>British Proofreading</h3>
+          <p class="course-guide">New Hart's Rules</p>
+          <p class="course-desc">Single quotes, logical punctuation, spaced en-dashes. For UK publishers, literary fiction, Commonwealth markets.</p>
+          <a href="mailto:diana-editrix@agentmail.to?subject=Application%3A%20British%20Proofreading%20%28Hart%27s%20Rules%29&body=Hi%20Diana%2C%0A%0AI'd%20like%20to%20apply%20for%20the%20British%20Proofreading%20course%20%28New%20Hart%27s%20Rules%29.%0A%0AMy%20name%3A%20%0AMy%20timezone%3A%20%0AWhy%20I%20want%20to%20learn%20proofreading%3A%20%0A%0AI%20can%20commit%201-2%20hours%20daily%20for%2010%20days.%0A%0AThank%20you!" class="course-apply">Apply for British Course →</a>
+        </div>
+        
+        <div class="course-card">
+          <div class="course-flag">🇺🇸</div>
+          <h3>American Proofreading</h3>
+          <p class="course-guide">Chicago Manual of Style</p>
+          <p class="course-desc">Double quotes, American punctuation, closed em-dashes. For US publishers, American trade fiction.</p>
+          <a href="mailto:diana-editrix@agentmail.to?subject=Application%3A%20American%20Proofreading%20%28Chicago%20Manual%29&body=Hi%20Diana%2C%0A%0AI'd%20like%20to%20apply%20for%20the%20American%20Proofreading%20course%20%28Chicago%20Manual%20of%20Style%29.%0A%0AMy%20name%3A%20%0AMy%20timezone%3A%20%0AWhy%20I%20want%20to%20learn%20proofreading%3A%20%0A%0AI%20can%20commit%201-2%20hours%20daily%20for%2010%20days.%0A%0AThank%20you!" class="course-apply">Apply for American Course →</a>
+        </div>
+      </div>
+      
+      <p class="course-note">Not sure which to choose? If you'll work with UK publishers, choose British. If US publishers, choose American. If both — start with one, and take the other later.</p>
+    </div>
+  </section>
+  
   <!-- Final CTA -->
   <section class="final-cta">
     <div class="container">
-      <h2>Ready to Begin?</h2>
-      <p>Ten days. Real skills. Your first step into professional editing.</p>
-      <a href="mailto:diana-editrix@agentmail.to?subject=Application%20for%20Editor%20Training&body=Hi%20Diana%2C%0A%0AI'd%20like%20to%20apply%20for%20the%20Proofreading%20Programme.%0A%0AMy%20name%3A%20%0AMy%20timezone%3A%20%0AWhy%20I%20want%20to%20learn%20proofreading%3A%20%0A%0AI%20can%20commit%201-2%20hours%20daily%20for%2010%20days.%0A%0AThank%20you!" class="cta-button">Apply for the Programme</a>
-      <p class="cta-note">You'll receive your welcome email within 24 hours.</p>
+      <h2>Questions?</h2>
+      <p>Not sure which course is right for you, or want to know more before applying?</p>
+      <a href="mailto:diana-editrix@agentmail.to?subject=Question%20about%20Editor%20Training&body=Hi%20Diana%2C%0A%0AI%20have%20a%20question%20about%20the%20programme%3A%0A%0A" class="cta-button">Ask Diana</a>
+      <p class="cta-note">You'll hear back within 24 hours.</p>
     </div>
   </section>
   

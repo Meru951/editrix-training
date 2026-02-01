@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proofreading Trainer — Editrix Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #1a1a2e;
+            color: #fff;
+            height: 100vh;
+            overflow: hidden;
+        }
+        
+        .trainer-layout {
+            display: grid;
+            grid-template-columns: 1fr 280px;
+            height: 100vh;
+        }
+        
+        /* Header */
+        .trainer-header {
+            grid-column: 1 / -1;
+            background: rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 12px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .manuscript-title {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.3rem;
+        }
+        
+        .progress-display {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .progress-bar {
+            width: 200px;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #e94560, #ff6b6b);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+        
+        .progress-text {
+            font-weight: 600;
+            color: #e94560;
+        }
+        
+        .back-btn {
+            color: #888;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .back-btn:hover {
+            color: #fff;
+        }
+        
+        /* Main content area */
+        .content-area {
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        
+        /* Text viewer (simulating PDF) */
+        .text-viewer {
+            flex: 1;
+            overflow-y: auto;
+            padding: 40px;
+            background: #fff;
+            color: #333;
+        }
+        
+        .text-content {
+            max-width: 650px;
+            margin: 0 auto;
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .text-content h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.5rem;
+        }
+        
+        .text-content p {
+            margin-bottom: 1.2em;
+            text-indent: 1.5em;
+        }
+        
+        .text-content p:first-of-type {
+            text-indent: 0;
+        }
+        
+        /* Highlighting */
+        .text-content ::selection {
+            background: rgba(233, 69, 96, 0.3);
+        }
+        
+        .highlight {
+            background: rgba(233, 69, 96, 0.3);
+            border-bottom: 2px solid #e94560;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .highlight:hover {
+            background: rgba(233, 69, 96, 0.5);
+        }
+        
+        .highlight.correct {
+            background: rgba(46, 204, 113, 0.3);
+            border-bottom-color: #2ecc71;
+        }
+        
+        .highlight.incorrect {
+            background: rgba(231, 76, 60, 0.3);
+            border-bottom-color: #e74c3c;
+        }
+        
+        /* Sidebar */
+        .sidebar {
+            background: rgba(255, 255, 255, 0.03);
+            border-left: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        
+        .sidebar-section {
+            padding: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .sidebar-section h3 {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #888;
+            margin-bottom: 15px;
+        }
+        
+        /* Tools */
+        .tools {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+        
+        .tool-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 12px;
+            color: #fff;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.8rem;
+            transition: all 0.2s ease;
+        }
+        
+        .tool-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: #e94560;
+        }
+        
+        .tool-btn.active {
+            background: rgba(233, 69, 96, 0.2);
+            border-color: #e94560;
+        }
+        
+        .tool-icon {
+            font-size: 1.3rem;
+        }
+        
+        /* Stats */
+        .stats {
+            display: grid;
+            gap: 10px;
+        }
+        
+        .stat {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .stat-label {
+            color: #888;
+            font-size: 0.9rem;
+        }
+        
+        .stat-value {
+            font-weight: 600;
+            color: #e94560;
+        }
+        
+        /* Marks list */
+        .marks-list {
+            flex: 1;
+            overflow-y: auto;
+            padding: 15px;
+        }
+        
+        .mark-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 6px;
+            padding: 10px;
+            margin-bottom: 8px;
+            font-size: 0.85rem;
+        }
+        
+        .mark-item .mark-text {
+            color: #e94560;
+            font-weight: 500;
+        }
+        
+        .mark-item .mark-type {
+            color: #888;
+            font-size: 0.75rem;
+            margin-top: 4px;
+        }
+        
+        .mark-item .remove-btn {
+            float: right;
+            background: none;
+            border: none;
+            color: #888;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .mark-item .remove-btn:hover {
+            color: #e74c3c;
+        }
+        
+        /* Actions */
+        .actions {
+            padding: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .action-btn {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+            transition: all 0.2s ease;
+        }
+        
+        .hint-btn {
+            background: rgba(241, 196, 15, 0.2);
+            color: #f1c40f;
+            border: 1px solid rgba(241, 196, 15, 0.3);
+        }
+        
+        .hint-btn:hover {
+            background: rgba(241, 196, 15, 0.3);
+        }
+        
+        .submit-btn {
+            background: #e94560;
+            color: #fff;
+        }
+        
+        .submit-btn:hover {
+            background: #d63851;
+        }
+        
+        /* Hint modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal.active {
+            display: flex;
+        }
+        
+        .modal-content {
+            background: #1a1a2e;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 30px;
+            max-width: 400px;
+            text-align: center;
+        }
+        
+        .modal-content h3 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .modal-content p {
+            color: #888;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .modal-content .hint-text {
+            background: rgba(241, 196, 15, 0.1);
+            border: 1px solid rgba(241, 196, 15, 0.3);
+            border-radius: 8px;
+            padding: 15px;
+            color: #f1c40f;
+            margin-bottom: 20px;
+        }
+        
+        .close-modal {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #fff;
+            padding: 10px 30px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        
+        .close-modal:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        /* Instructions overlay */
+        .instructions-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1001;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .instructions-overlay.hidden {
+            display: none;
+        }
+        
+        .instructions-box {
+            background: #1a1a2e;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 40px;
+            max-width: 500px;
+            text-align: center;
+        }
+        
+        .instructions-box h2 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+        
+        .instructions-box .subtitle {
+            color: #e94560;
+            margin-bottom: 25px;
+        }
+        
+        .instructions-box ul {
+            text-align: left;
+            margin: 20px 0;
+            color: #aaa;
+            line-height: 1.8;
+        }
+        
+        .instructions-box ul li {
+            margin-bottom: 10px;
+        }
+        
+        .begin-btn {
+            background: #e94560;
+            color: #fff;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        
+        .begin-btn:hover {
+            background: #d63851;
+        }
+    </style>
+</head>
+<body>
+    <!-- Instructions Overlay -->
+    <div class="instructions-overlay" id="instructions">
+        <div class="instructions-box">
+            <h2>The Netherfield Ball</h2>
+            <p class="subtitle">This excerpt contains 11 deliberate errors</p>
+            <p style="color: #666; font-size: 0.85rem; margin-top: 5px;">(Full manuscript has 75 errors)</p>
+            <ul>
+                <li>📖 Read the text carefully</li>
+                <li>✏️ Select any text you think contains an error</li>
+                <li>🎯 Your goal: find all 75 errors</li>
+                <li>💡 Click "Get Hint" if you're stuck — no penalty!</li>
+                <li>✅ When ready, click "Submit" to see your results</li>
+            </ul>
+            <p style="color: #888; font-size: 0.9rem;">
+                The goal is to learn. Take your time.
+            </p>
+            <button class="begin-btn" onclick="hideInstructions()">Begin Proofreading →</button>
+        </div>
+    </div>
+    
+    <!-- Hint Modal -->
+    <div class="modal" id="hintModal">
+        <div class="modal-content">
+            <h3>💡 Hint</h3>
+            <div class="hint-text" id="hintText">
+                There's a spelling error in the first paragraph. Look for a word ending in "-ly".
+            </div>
+            <p>Keep looking! You're doing great.</p>
+            <button class="close-modal" onclick="closeHintModal()">Got it</button>
+        </div>
+    </div>
+    
+    <div class="trainer-layout">
+        <!-- Header -->
+        <header class="trainer-header">
+            <a href="index.html" class="back-btn">← Back to manuscripts</a>
+            <h1 class="manuscript-title">The Netherfield Ball</h1>
+            <div class="progress-display">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <span class="progress-text"><span id="foundCount">0</span>/11 found</span>
+            </div>
+        </header>
+        
+        <!-- Main content -->
+        <main class="content-area">
+            <div class="text-viewer">
+                <div class="text-content" id="textContent">
+                    <!-- Text will be loaded here -->
+                    <h2>Chapter I</h2>
+                    
+                    <p>It is a truth universaly acknowledged, that a single man in possession of a good fortune must be in want of a wife.</p>
+                    
+                    <p>However litle known the feelings or views of such a man may be on his first entering a neighbourhood, this truth is so well fixed in the minds of the surrounding families, that he is considerd as the rightful property of some one or other of their daughters.</p>
+                    
+                    <p>"My dear Mr Bennett," said his lady to him one day, "have you heard that Netherfield Park is let at last?"</p>
+                    
+                    <p>Mr. Bennett replied that he had not.</p>
+                    
+                    <p>"But it is," returned she; "for Mrs Long has just been here, and she told me all about it."</p>
+                    
+                    <p>Mr Bennett made no the answer.</p>
+                    
+                    <p>"Do not you want to know who has taken it?" cried his wife impatiently.</p>
+                    
+                    <p>"You want to tell me, and I have no objection to hearing it."</p>
+                    
+                    <p>This was invitation enought.</p>
+                    
+                    <p>"Why, my dear, you must know, Mrs Long says that Netherfield is taken by a young man of large fortune from the north of England; that he came down on Monday in a chaise and four to see the place, and was so much delighted with it that he agreed with Mr Morris immediately; that he is to take possession before Michaelmas, and some of his servants are to be in the house by the end of next week."</p>
+                    
+                    <p>"What is his name?"</p>
+                    
+                    <p>"Bingley."</p>
+                    
+                    <p>"Is he married or single?"</p>
+                    
+                    <p>"Oh, single, my dear, to be sure! single man of large fortune; four or five thousand a year. What a fine thing for our girls!"</p>
+                    
+                    <p>"How so? how can it affect them?"</p>
+                    
+                    <p>"My dear Mr Bennett," replied his wife, "how can you be so tiresome. You must know that I am thinking of his marrying one of them."</p>
+                    
+                    <p>"Is that his design in settling here?"</p>
+                    
+                    <p>"Design? Nonsense how can you talk so! But it is very likely that he may fall in love with one of them, and therefore you must visit him as soon as he comes."</p>
+                    
+                    <p>"I see no occasion for that. You and the girls may go--or you may send them by themselves, which perhaps will be still better; for as you are as handsome as any of them, Mr Bingly might like you the best of the party."</p>
+                    
+                    <p>"My dear, you flater me. I certainly have had my share of beauty, but I do not pretend to be anything extraordinary now. When a woman has five grown-up daughters, she ought to give over thinking of her own beauty."</p>
+                    
+                    <p><em>[More text would continue here in the full version...]</em></p>
+                </div>
+            </div>
+        </main>
+        
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <h3>Tools</h3>
+                <div class="tools">
+                    <button class="tool-btn active" data-tool="highlight">
+                        <span class="tool-icon">✏️</span>
+                        Highlight
+                    </button>
+                    <button class="tool-btn" data-tool="strikethrough">
+                        <span class="tool-icon">✂️</span>
+                        Strike
+                    </button>
+                    <button class="tool-btn" data-tool="insert">
+                        <span class="tool-icon">➕</span>
+                        Insert
+                    </button>
+                    <button class="tool-btn" data-tool="query">
+                        <span class="tool-icon">❓</span>
+                        Query
+                    </button>
+                </div>
+            </div>
+            
+            <div class="sidebar-section">
+                <h3>Your Progress</h3>
+                <div class="stats">
+                    <div class="stat">
+                        <span class="stat-label">Errors Found</span>
+                        <span class="stat-value" id="statsFound">0</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Target</span>
+                        <span class="stat-value">11</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Hints Used</span>
+                        <span class="stat-value" id="statsHints">0</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="sidebar-section" style="flex: 1; display: flex; flex-direction: column;">
+                <h3>Your Marks</h3>
+                <div class="marks-list" id="marksList">
+                    <p style="color: #666; font-size: 0.85rem; text-align: center; padding: 20px;">
+                        Select text to mark errors
+                    </p>
+                </div>
+            </div>
+            
+            <div class="actions">
+                <button class="action-btn hint-btn" onclick="showHint()">
+                    💡 Get Hint
+                </button>
+                <button class="action-btn submit-btn" onclick="submitWork()">
+                    ✅ Submit for Grading
+                </button>
+            </div>
+        </aside>
+    </div>
+    
+    <script>
+        // State
+        let marks = [];
+        let hintsUsed = 0;
+        let currentTool = 'highlight';
+        const totalErrors = 11; // This excerpt - full manuscript has 75
+        
+        // Answer key for sample text (11 errors in this excerpt)
+        const answerKey = [
+            { text: "universaly", correct: "universally", type: "spelling", hint: "First paragraph: look for a word ending in '-ly'" },
+            { text: "litle", correct: "little", type: "spelling", hint: "Second paragraph: a common word is misspelled" },
+            { text: "considerd", correct: "considered", type: "spelling", hint: "Second paragraph: past tense verb is misspelled" },
+            { text: "Mr Bennett", correct: "Mr. Bennet", type: "consistency", hint: "The family name changes spelling — is it 'Bennet' or 'Bennett'?" },
+            { text: "no the answer", correct: "no answer", type: "inserted word", hint: "Look for an extra word that shouldn't be there" },
+            { text: "enought", correct: "enough", type: "spelling", hint: "'This was invitation...' — check the last word" },
+            { text: "single man of large", correct: "A single man of large", type: "missing word", hint: "An article is missing before 'single man'" },
+            { text: "tiresome.", correct: "tiresome?", type: "punctuation", hint: "Check the punctuation after 'tiresome' — is it the right mark?" },
+            { text: "Nonsense how", correct: "Nonsense, how", type: "punctuation", hint: "A comma is missing after an exclamation" },
+            { text: "Mr Bingly", correct: "Mr. Bingley", type: "spelling", hint: "One character's name is spelled incorrectly" },
+            { text: "flater", correct: "flatter", type: "spelling", hint: "Check 'you flater me' — is that spelled right?" }
+        ];
+        
+        // Generate hints from answer key
+        const hints = answerKey.map(e => e.hint);
+        let hintIndex = 0;
+        
+        // Hide instructions
+        function hideInstructions() {
+            document.getElementById('instructions').classList.add('hidden');
+        }
+        
+        // Tool selection
+        document.querySelectorAll('.tool-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.tool-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                currentTool = btn.dataset.tool;
+            });
+        });
+        
+        // Text selection handling
+        document.getElementById('textContent').addEventListener('mouseup', () => {
+            const selection = window.getSelection();
+            const text = selection.toString().trim();
+            
+            if (text.length > 0) {
+                addMark(text, selection.getRangeAt(0));
+            }
+        });
+        
+        function addMark(text, range) {
+            // Create highlight span
+            const span = document.createElement('span');
+            span.className = 'highlight';
+            span.dataset.markId = marks.length;
+            
+            try {
+                range.surroundContents(span);
+            } catch (e) {
+                // Selection spans multiple elements
+                return;
+            }
+            
+            // Add to marks list
+            marks.push({
+                id: marks.length,
+                text: text,
+                tool: currentTool
+            });
+            
+            updateUI();
+            window.getSelection().removeAllRanges();
+        }
+        
+        function removeMark(id) {
+            const span = document.querySelector(`[data-mark-id="${id}"]`);
+            if (span) {
+                const parent = span.parentNode;
+                while (span.firstChild) {
+                    parent.insertBefore(span.firstChild, span);
+                }
+                parent.removeChild(span);
+            }
+            
+            marks = marks.filter(m => m.id !== id);
+            updateUI();
+        }
+        
+        function updateUI() {
+            // Update found count
+            document.getElementById('foundCount').textContent = marks.length;
+            document.getElementById('statsFound').textContent = marks.length;
+            
+            // Update progress bar
+            const progress = (marks.length / totalErrors) * 100;
+            document.getElementById('progressFill').style.width = `${Math.min(progress, 100)}%`;
+            
+            // Update marks list
+            const listEl = document.getElementById('marksList');
+            if (marks.length === 0) {
+                listEl.innerHTML = '<p style="color: #666; font-size: 0.85rem; text-align: center; padding: 20px;">Select text to mark errors</p>';
+            } else {
+                listEl.innerHTML = marks.map(m => `
+                    <div class="mark-item">
+                        <button class="remove-btn" onclick="removeMark(${m.id})">×</button>
+                        <div class="mark-text">"${m.text.substring(0, 30)}${m.text.length > 30 ? '...' : ''}"</div>
+                        <div class="mark-type">${m.tool}</div>
+                    </div>
+                `).join('');
+            }
+        }
+        
+        function showHint() {
+            hintsUsed++;
+            document.getElementById('statsHints').textContent = hintsUsed;
+            document.getElementById('hintText').textContent = hints[hintIndex % hints.length];
+            hintIndex++;
+            document.getElementById('hintModal').classList.add('active');
+        }
+        
+        function closeHintModal() {
+            document.getElementById('hintModal').classList.remove('active');
+        }
+        
+        function submitWork() {
+            // Compare marks to answer key
+            let correctFinds = 0;
+            let incorrectMarks = 0;
+            const foundErrors = [];
+            const missedErrors = [];
+            
+            // Check each answer key item
+            for (const error of answerKey) {
+                const found = marks.some(m => 
+                    m.text.toLowerCase().includes(error.text.toLowerCase()) ||
+                    error.text.toLowerCase().includes(m.text.toLowerCase())
+                );
+                if (found) {
+                    correctFinds++;
+                    foundErrors.push(`✅ "${error.text}" → "${error.correct}" (${error.type})`);
+                } else {
+                    missedErrors.push(`❌ "${error.text}" → "${error.correct}" (${error.type})`);
+                }
+            }
+            
+            // Check for false positives (marks that don't match any error)
+            for (const mark of marks) {
+                const matchesError = answerKey.some(e => 
+                    mark.text.toLowerCase().includes(e.text.toLowerCase()) ||
+                    e.text.toLowerCase().includes(mark.text.toLowerCase())
+                );
+                if (!matchesError) {
+                    incorrectMarks++;
+                }
+            }
+            
+            const score = Math.round((correctFinds / totalErrors) * 100);
+            
+            let resultText = `📊 RESULTS\n\n`;
+            resultText += `Score: ${score}%\n`;
+            resultText += `Correct: ${correctFinds}/${totalErrors}\n`;
+            resultText += `Hints used: ${hintsUsed}\n`;
+            if (incorrectMarks > 0) {
+                resultText += `False positives: ${incorrectMarks}\n`;
+            }
+            resultText += `\n--- FOUND ---\n${foundErrors.join('\n') || 'None'}\n`;
+            resultText += `\n--- MISSED ---\n${missedErrors.join('\n') || 'None! Perfect!'}`;
+            
+            alert(resultText);
+        }
+    </script>
+</body>
+</html>

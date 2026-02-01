@@ -1,121 +1,112 @@
 # Diana Course Catalogue
 
-## The Two Standards
+## The Two Style Guides for Fiction
 
-There are two major style guides for English-language publishing:
+### 🇬🇧 New Hart's Rules (Oxford)
+**The British Standard for Fiction**
 
-### 🇬🇧 New Hart's Rules (British)
-- Published by Oxford University Press
-- The definitive British English style guide
-- Used by UK publishers, Commonwealth countries, literary fiction
+- The Oxford style guide for British English
 - Successor to Hart's Rules (first published 1893)
+- Definitive guide for British literary publishing
 
-### 🇺🇸 Chicago Manual of Style (American)
+### 🇺🇸 Chicago Manual of Style
+**The American Standard for Fiction**
+
 - Published by University of Chicago Press
-- The definitive American English style guide
-- Used by US publishers, academic presses, most American books
-- Now in 17th edition
+- Now in 17th edition (2017)
+- Standard for US trade publishing
 
 ---
 
-## Diana's Courses
+## Course 1: British Proofreading
 
-### Course 1: British Proofreading
-**Style Guide:** New Hart's Rules (Oxford)
+**Style Guide:** New Hart's Rules (2nd edition, 2014)
 **Focus:** Fiction
 **Duration:** 10 days
 
-| Convention | British (Hart's) |
-|------------|------------------|
-| Spelling | -ise (organise), -our (colour) |
-| Quotes | Single quotes first, double inside |
-| Punctuation | Outside quotes unless part of quote |
-| Dashes | Spaced en-dash ( – ) |
-| Dates | 1 February 2026 |
-| Oxford comma | Optional (despite the name!) |
+### Hart's Rules for Fiction — Key Points
 
-### Course 2: American Proofreading  
-**Style Guide:** Chicago Manual of Style (17th ed.)
-**Focus:** Fiction
-**Duration:** 10 days
+| Element | Hart's Rule |
+|---------|-------------|
+| **Quotation marks** | Single for dialogue, double for nested |
+| **Punctuation placement** | Logical (outside unless part of quote) |
+| **Parenthetical dashes** | Spaced en-dash: "She knew – as we all did – the truth" |
+| **Interrupted speech** | Unspaced em-dash: 'I was going to—' |
+| **Spelling** | -ise/-ize (both acceptable, be consistent), -our, -re |
+| **Dates** | 4 July 2026 (no ordinal suffixes) |
+| **Serial comma** | Optional but recommended for clarity |
+| **Numbers** | Spell out one to one hundred |
+| **Ellipsis** | Three points: 'I thought maybe...' |
 
-| Convention | American (Chicago) |
-|------------|-------------------|
-| Spelling | -ize (organize), -or (color) |
-| Quotes | Double quotes first, single inside |
-| Punctuation | Inside quotes (American style) |
-| Dashes | Closed em-dash (—) |
-| Dates | February 1, 2026 |
-| Serial comma | Required |
+### Fiction-Specific Skills
+
+- Dialogue punctuation (speech tags vs action beats)
+- Character name consistency
+- Timeline and continuity tracking
+- Style sheet creation
+- Narrative voice preservation
 
 ---
 
-## Key Differences I Must Know
+## Course 2: American Proofreading
 
-### Quotation Marks
+**Style Guide:** Chicago Manual of Style (17th edition)
+**Focus:** Fiction
+**Duration:** 10 days
 
-**British (Hart's):**
-> 'I said, "Hello," to her.'
+### Chicago Rules for Fiction — Key Points
 
-**American (Chicago):**
-> "I said, 'Hello,' to her."
+| Element | Chicago Rule |
+|---------|--------------|
+| **Quotation marks** | Double for dialogue, single for nested |
+| **Punctuation placement** | American style (inside quotes always) |
+| **Parenthetical dashes** | Closed em-dash: "She knew—as we all did—the truth" |
+| **Interrupted speech** | Closed em-dash: "I was going to—" |
+| **Spelling** | -ize only, -or, -er |
+| **Dates** | July 4, 2026 |
+| **Serial comma** | Required |
+| **Numbers** | Spell out one to one hundred |
+| **Ellipsis** | Three dots (Chicago allows space before in some cases) |
 
-### Punctuation with Quotes
+### Fiction-Specific Skills
 
-**British (Hart's):**
-> She called it 'rubbish'.
-> (Period outside — it's not part of the quote)
+- Dialogue punctuation (American conventions)
+- Character name consistency
+- Timeline and continuity tracking
+- Style sheet creation
+- Narrative voice preservation
 
-**American (Chicago):**
-> She called it "rubbish."
-> (Period inside — always, regardless of logic)
+---
 
-### Dashes
+## Side-by-Side Comparison
 
-**British (Hart's):**
-> The result – as expected – was chaos.
-> (Spaced en-dash)
-
-**American (Chicago):**
-> The result—as expected—was chaos.
-> (Closed em-dash, no spaces)
-
-### Numbers
-
-**British (Hart's):**
-> Spell out one to one hundred
-> 15 per cent
-
-**American (Chicago):**
-> Spell out one to one hundred (same)
-> 15 percent (one word)
-
-### Citations
-
-**British:** Various systems (Oxford, Harvard)
-**American (Chicago):** Notes-bibliography or Author-date
+| | British (Hart's) | American (Chicago) |
+|---|---|---|
+| **Dialogue** | 'Hello,' she said. | "Hello," she said. |
+| **Nested quote** | 'She said, "Hello", and left.' | "She said, 'Hello,' and left." |
+| **Parenthetical** | The truth – hard as it was – emerged. | The truth—hard as it was—emerged. |
+| **Interrupted** | 'I was going to—' | "I was going to—" |
+| **Quote + narrator** | She called it 'rubbish'. | She called it "rubbish." |
+| **Date** | 4 July 2026 | July 4, 2026 |
+| **Colour/color** | colour | color |
+| **Travelling** | travelling (double l) | traveling (single l) |
 
 ---
 
 ## My Learning Commitment
 
 As Diana, I must:
-1. **Know both style guides deeply** — not just surface rules
-2. **Understand the WHY** — not just the what
-3. **Catch edge cases** — where the guides differ subtly
-4. **Stay current** — both guides get updated
+1. Know both style guides thoroughly
+2. Teach accurate rules, not approximations
+3. Correct my own mistakes promptly
+4. Keep learning — both guides evolve
 
-I teach editors. I must be a better editor than my students.
-
----
-
-## Resources I'm Learning From
-
-- New Hart's Rules (2nd edition, 2014)
+**Sources I study:**
+- New Hart's Rules (2nd edition, Oxford, 2014)
 - Chicago Manual of Style (17th edition, 2017)
-- Butcher's Copy-editing (British reference)
-- Amy Einsohn's Copyeditor's Handbook (American reference)
+- Oxford Dictionary for Writers and Editors
+- Merriam-Webster (for American)
 
 ---
 
-*Diana learns so she can teach. No shortcuts.*
+*Accuracy first. Always.*

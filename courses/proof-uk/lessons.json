@@ -1,0 +1,191 @@
+{
+  "course_id": "proof-uk",
+  "total_days": 10,
+  "lessons": [
+    {
+      "day": 1,
+      "title": "What Proofreading Is (And Isn't)",
+      "content_file": "day-01-what-is-proofreading.md",
+      "focus": "Understanding scope",
+      "why": "If you don't understand where proofreading ends and copy-editing begins, you'll overstep — or underdeliver.",
+      "concepts": [
+        "Proofreading vs copy-editing vs editing",
+        "The proof stage in publishing workflow",
+        "What you're checking (typesetter errors, missed errors)",
+        "What you're NOT checking (style rewrites, content changes)"
+      ],
+      "exercise": "Identify which corrections belong at proof stage vs copy-edit stage",
+      "exercise_type": "multiple_choice"
+    },
+    {
+      "day": 2,
+      "title": "Marking Up a PDF",
+      "content_file": "day-02-pdf-markup.md",
+      "focus": "The physical skill of markup",
+      "why": "Spotting errors means nothing if you can't communicate them clearly. The typesetter reads your marks, not your mind.",
+      "concepts": [
+        "Why PDF (fixed layout, final proof)",
+        "Why colour conventions (red = correction, yellow = query)",
+        "Adobe Acrobat Reader tools",
+        "Strikethrough, Insert, Replace, Highlight, Sticky Note",
+        "The three-pass method"
+      ],
+      "exercise": "Mark up a practice PDF with planted errors",
+      "exercise_type": "pdf_markup",
+      "practice_file": "EA-01-PROOF.pdf",
+      "practice_title": "The Netherfield Ball",
+      "practice_difficulty": "easy"
+    },
+    {
+      "day": 3,
+      "title": "Spelling and House Style",
+      "content_file": "day-03-spelling-style.md",
+      "focus": "British spelling conventions",
+      "why": "Consistency is kindness. Readers stumble when 'realise' becomes 'realize' mid-chapter.",
+      "concepts": [
+        "-ise vs -ize (Hart's: both acceptable, but be consistent)",
+        "-our vs -or (British: colour, honour)",
+        "-re vs -er (British: centre, theatre)",
+        "Checking against house style, not personal preference"
+      ],
+      "exercise": "Identify spelling inconsistencies in a passage",
+      "exercise_type": "pdf_markup",
+      "practice_file": "EA-01-PROOF.pdf",
+      "practice_title": "The Netherfield Ball",
+      "practice_difficulty": "easy"
+    },
+    {
+      "day": 4,
+      "title": "Punctuation: Dialogue",
+      "content_file": "day-04-dialogue-punctuation.md",
+      "focus": "British dialogue conventions",
+      "why": "Dialogue is where readers hear the characters. Wrong punctuation breaks the voice.",
+      "concepts": [
+        "Single quotes for dialogue (British standard)",
+        "Double quotes for quotes within dialogue",
+        "Punctuation inside vs outside quotes (logical style)",
+        "Dialogue tags and comma placement",
+        "Broken dialogue and attribution"
+      ],
+      "exercise": "Correct dialogue punctuation in a fiction passage",
+      "exercise_type": "pdf_markup",
+      "practice_file": "EA-01-PROOF.pdf",
+      "practice_title": "The Netherfield Ball",
+      "practice_difficulty": "easy"
+    },
+    {
+      "day": 5,
+      "title": "Punctuation: Dashes and Ellipses",
+      "content_file": "day-05-dashes-ellipses.md",
+      "focus": "Dashes, hyphens, and ellipses",
+      "why": "A hyphen is not a dash. An en-dash is not an em-dash. These tiny marks carry meaning.",
+      "concepts": [
+        "Hyphen (-): compound words",
+        "En-dash (–): ranges, connections",
+        "Em-dash (—): interruptions, parenthetical",
+        "British convention: spaced en-dash vs unspaced em-dash",
+        "Ellipses: three dots, spacing, when to use"
+      ],
+      "exercise": "Standardise dash and ellipsis usage in a passage",
+      "exercise_type": "pdf_markup",
+      "practice_file": "EA-02-PROOF.pdf",
+      "practice_title": "The Marshes at Midnight",
+      "practice_difficulty": "medium"
+    },
+    {
+      "day": 6,
+      "title": "Consistency: Names and Terms",
+      "content_file": "day-06-consistency.md",
+      "focus": "Internal consistency",
+      "why": "The reader trusts you. If 'Catherine' becomes 'Katherine' on page 50, that trust breaks.",
+      "concepts": [
+        "Character name tracking",
+        "Place name consistency",
+        "Terminology consistency (is it 'grey' or 'gray' in this book?)",
+        "Creating a style sheet as you proofread"
+      ],
+      "exercise": "Create a style sheet from a passage and identify inconsistencies",
+      "exercise_type": "pdf_markup",
+      "practice_file": "EA-03-PROOF.pdf",
+      "practice_title": "The Red Room",
+      "practice_difficulty": "medium"
+    },
+    {
+      "day": 7,
+      "title": "Hyphenation and Compounds",
+      "content_file": "day-07-hyphenation.md",
+      "focus": "Compound adjectives and noun phrases",
+      "why": "A 'man eating shark' is different from a 'man-eating shark'. Hyphens clarify meaning.",
+      "concepts": [
+        "Compound adjectives before nouns (well-known author)",
+        "Compound adjectives after nouns (the author is well known)",
+        "Permanent compounds vs temporary compounds",
+        "Prefixes: when to hyphenate (re-cover vs recover)",
+        "Hart's Rules guidance on compounds"
+      ],
+      "exercise": "Correct hyphenation in a fiction passage",
+      "exercise_type": "pdf_markup",
+      "practice_file": "EA-02-PROOF.pdf",
+      "practice_title": "The Marshes at Midnight",
+      "practice_difficulty": "medium"
+    },
+    {
+      "day": 8,
+      "title": "Numbers, Dates, and Times",
+      "content_file": "day-08-numbers.md",
+      "focus": "Numerical consistency",
+      "why": "Nothing screams 'amateur' like inconsistent number treatment. Spell out or use figures — but be consistent.",
+      "concepts": [
+        "Spell out one to one hundred (Hart's fiction convention)",
+        "Figures for specific measurements, times, dates",
+        "Date format (1 January 2026, not February 1, 2026)",
+        "Time format (8.30 a.m. or 8:30 am — pick one)",
+        "Currency and measurements"
+      ],
+      "exercise": "Standardise number treatment in a passage",
+      "exercise_type": "pdf_markup",
+      "practice_file": "EA-03-PROOF.pdf",
+      "practice_title": "The Red Room",
+      "practice_difficulty": "medium"
+    },
+    {
+      "day": 9,
+      "title": "Queries: When to Ask, Not Fix",
+      "content_file": "day-09-queries.md",
+      "focus": "Editorial judgment",
+      "why": "A proofreader who changes everything is dangerous. A proofreader who asks the right questions is invaluable.",
+      "concepts": [
+        "Corrections vs queries",
+        "When you're certain (fix it)",
+        "When you're uncertain (query it)",
+        "How to write a good query (specific, neutral, actionable)",
+        "AU, ED, STET — query conventions"
+      ],
+      "exercise": "Identify which items need queries vs corrections",
+      "exercise_type": "pdf_markup",
+      "practice_file": "EA-04-PROOF.pdf",
+      "practice_title": "The Bohemian Affair",
+      "practice_difficulty": "hard"
+    },
+    {
+      "day": 10,
+      "title": "Full Proof: Putting It Together",
+      "content_file": "day-10-full-proof.md",
+      "focus": "Complete proofreading exercise",
+      "why": "You've learned the pieces. Now prove you can do the whole job.",
+      "concepts": [
+        "Full workflow: first read, markup, review",
+        "Balancing speed and accuracy",
+        "Professional delivery",
+        "Building your reputation"
+      ],
+      "exercise": "Proofread a complete fiction excerpt to professional standard",
+      "exercise_type": "pdf_markup",
+      "practice_file": "EA-05-PROOF.pdf",
+      "practice_title": "The Portrait",
+      "practice_difficulty": "hard",
+      "is_final_assessment": true,
+      "passing_score": 90
+    }
+  ]
+}
