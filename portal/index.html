@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Proofreading Course | Editrix</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.7;
+            color: #333;
+            background: #fafafa;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        header {
+            text-align: center;
+            padding: 60px 0;
+            background: #1a1a2e;
+            color: white;
+        }
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: normal;
+        }
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        .hero {
+            background: white;
+            padding: 60px 40px;
+            margin: -30px 20px 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        .hero h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #1a1a2e;
+        }
+        .hero ul {
+            list-style: none;
+            margin: 30px 0;
+        }
+        .hero li {
+            padding: 12px 0;
+            padding-left: 30px;
+            position: relative;
+            border-bottom: 1px solid #eee;
+        }
+        .hero li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #4a9;
+            font-weight: bold;
+        }
+        .cta-form {
+            background: #f5f5f5;
+            padding: 30px;
+            border-radius: 8px;
+            margin-top: 40px;
+        }
+        .cta-form h3 {
+            margin-bottom: 20px;
+        }
+        .cta-form input[type="email"] {
+            width: 100%;
+            padding: 15px;
+            font-size: 1rem;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+        .cta-form button {
+            width: 100%;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            background: #1a1a2e;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .cta-form button:hover {
+            background: #2a2a4e;
+        }
+        .stages {
+            display: grid;
+            gap: 20px;
+            margin: 40px 0;
+        }
+        .stage {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid #4a9;
+        }
+        .stage h4 {
+            color: #1a1a2e;
+            margin-bottom: 8px;
+        }
+        .stage p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Professional Proofreading</h1>
+            <p>A 10-day course by Editrix</p>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="hero">
+            <h2>Learn to proofread like a professional — in 10 days</h2>
+            <p>This course teaches the core skills every proofreader needs: spotting errors, maintaining consistency, and working efficiently under deadline.</p>
+            
+            <ul>
+                <li><strong>Day 1-2:</strong> Foundations — what proofreaders do (and don't do)</li>
+                <li><strong>Day 3-4:</strong> Punctuation & dialogue mastery</li>
+                <li><strong>Day 5-6:</strong> Consistency & style sheets</li>
+                <li><strong>Day 7-8:</strong> Integration & professional queries</li>
+                <li><strong>Day 9-10:</strong> Speed training & final assessment</li>
+            </ul>
+            
+            <div class="cta-form">
+                <h3>Start the Free Course</h3>
+                <form id="signup-form">
+                    <input type="email" id="email" placeholder="Your email address" required>
+                    <button type="submit">Begin Your Training →</button>
+                </form>
+            </div>
+        </div>
+        
+        <h3 style="margin-bottom: 20px;">What You'll Learn</h3>
+        
+        <div class="stages">
+            <div class="stage">
+                <h4>Stage 1: Foundations</h4>
+                <p>The proofreader's role, boundaries, and how to train your eye to spot errors automatically.</p>
+            </div>
+            <div class="stage">
+                <h4>Stage 2: Punctuation & Dialogue</h4>
+                <p>Comma rules, dialogue punctuation, dashes, and the most common punctuation errors.</p>
+            </div>
+            <div class="stage">
+                <h4>Stage 3: Consistency</h4>
+                <p>Spotting inconsistencies, building style sheets, and tracking details across a manuscript.</p>
+            </div>
+            <div class="stage">
+                <h4>Stage 4: Integration</h4>
+                <p>Putting all skills together on real manuscript pages. Writing professional queries.</p>
+            </div>
+            <div class="stage">
+                <h4>Stage 5: Speed & Assessment</h4>
+                <p>Working faster without sacrificing accuracy. Final certification test.</p>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>© 2026 Editrix.ai — AI-assisted publishing tools</p>
+    </footer>
+    
+    <script>
+        document.getElementById('signup-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            localStorage.setItem('courseEmail', email);
+            localStorage.setItem('courseStartDate', new Date().toISOString());
+            window.location.href = 'dashboard.html';
+        });
+    </script>
+</body>
+</html>

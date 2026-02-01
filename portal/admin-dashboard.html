@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diana Admin Dashboard | Editrix</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #1a1a1a;
+      --ink-light: #6b7280;
+      --bg: #f3f4f6;
+      --card: #ffffff;
+      --accent: #10b981;
+      --accent-light: #d1fae5;
+      --warning: #f59e0b;
+      --warning-light: #fef3c7;
+      --danger: #ef4444;
+      --danger-light: #fee2e2;
+      --border: #e5e7eb;
+    }
+    
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.5;
+    }
+    
+    header {
+      background: var(--card);
+      padding: 1rem 2rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: var(--accent);
+    }
+    
+    .refresh-btn {
+      background: var(--accent);
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.875rem;
+    }
+    
+    main {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    
+    /* Stats Cards */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    
+    .stat-card {
+      background: var(--card);
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    
+    .stat-card h3 {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      color: var(--ink-light);
+      margin-bottom: 0.5rem;
+    }
+    
+    .stat-card .value {
+      font-size: 2rem;
+      font-weight: 700;
+    }
+    
+    .stat-card .subtext {
+      font-size: 0.8rem;
+      color: var(--ink-light);
+    }
+    
+    /* Student Table */
+    .section-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    
+    .students-table {
+      background: var(--card);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      margin-bottom: 2rem;
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    
+    th, td {
+      padding: 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    
+    th {
+      background: var(--bg);
+      font-weight: 600;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      color: var(--ink-light);
+    }
+    
+    tr:last-child td {
+      border-bottom: none;
+    }
+    
+    tr:hover {
+      background: var(--bg);
+    }
+    
+    .student-name {
+      font-weight: 500;
+    }
+    
+    .student-email {
+      font-size: 0.8rem;
+      color: var(--ink-light);
+    }
+    
+    .status-badge {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      border-radius: 99px;
+      font-size: 0.75rem;
+      font-weight: 500;
+    }
+    
+    .status-active {
+      background: var(--accent-light);
+      color: #065f46;
+    }
+    
+    .status-at-risk {
+      background: var(--warning-light);
+      color: #92400e;
+    }
+    
+    .status-completed {
+      background: var(--accent-light);
+      color: #065f46;
+    }
+    
+    .status-closed {
+      background: var(--danger-light);
+      color: #991b1b;
+    }
+    
+    .progress-bar {
+      width: 100%;
+      height: 8px;
+      background: var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    
+    .progress-fill {
+      height: 100%;
+      background: var(--accent);
+      border-radius: 4px;
+    }
+    
+    .grade-badge {
+      font-weight: 700;
+      font-size: 1.25rem;
+    }
+    
+    .grade-A { color: #059669; }
+    .grade-B { color: #0284c7; }
+    .grade-C { color: #d97706; }
+    .grade-F { color: #dc2626; }
+    
+    /* Detailed Student Card */
+    .student-detail {
+      background: var(--card);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    
+    .student-detail h3 {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+    }
+    
+    .metric {
+      padding: 0.75rem;
+      background: var(--bg);
+      border-radius: 8px;
+    }
+    
+    .metric-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      color: var(--ink-light);
+    }
+    
+    .metric-value {
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+    
+    /* Timeline */
+    .timeline {
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+    }
+    
+    .timeline-item {
+      display: flex;
+      gap: 1rem;
+      padding: 0.5rem 0;
+      font-size: 0.85rem;
+    }
+    
+    .timeline-time {
+      color: var(--ink-light);
+      min-width: 100px;
+    }
+    
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: var(--ink-light);
+      font-size: 0.8rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">📊 Diana Admin Dashboard</div>
+    <button class="refresh-btn" onclick="location.reload()">↻ Refresh</button>
+  </header>
+  
+  <main>
+    <!-- Stats Overview -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <h3>Total Students</h3>
+        <div class="value" id="totalStudents">5</div>
+        <div class="subtext">enrolled</div>
+      </div>
+      <div class="stat-card">
+        <h3>Active</h3>
+        <div class="value" id="activeStudents">5</div>
+        <div class="subtext">in progress</div>
+      </div>
+      <div class="stat-card">
+        <h3>At Risk</h3>
+        <div class="value" id="atRiskStudents">0</div>
+        <div class="subtext">need attention</div>
+      </div>
+      <div class="stat-card">
+        <h3>Completed</h3>
+        <div class="value" id="completedStudents">0</div>
+        <div class="subtext">finished programme</div>
+      </div>
+      <div class="stat-card">
+        <h3>Avg Progress</h3>
+        <div class="value" id="avgProgress">0%</div>
+        <div class="subtext">of 10 days</div>
+      </div>
+    </div>
+    
+    <!-- Students Table -->
+    <h2 class="section-title">All Students</h2>
+    <div class="students-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Student</th>
+            <th>Status</th>
+            <th>Day</th>
+            <th>Progress</th>
+            <th>Accuracy</th>
+            <th>Avg Time/Day</th>
+            <th>Last Active</th>
+            <th>Grade</th>
+          </tr>
+        </thead>
+        <tbody id="studentsTableBody">
+          <!-- Populated by JS -->
+        </tbody>
+      </table>
+    </div>
+    
+    <!-- Detailed Student Cards -->
+    <h2 class="section-title">Student Details</h2>
+    <div id="studentDetails">
+      <!-- Populated by JS -->
+    </div>
+  </main>
+  
+  <footer>
+    Diana Admin Dashboard · Last updated: <span id="lastUpdated"></span>
+  </footer>
+  
+  <script>
+    // Student data (in production, this would come from an API)
+    const students = [
+      {
+        id: "vidhi-001",
+        name: "Vidhi Gupta",
+        email: "vidhi@editrix.ai",
+        status: "active",
+        currentDay: 0,
+        enrolled: "2026-02-01T11:05:00",
+        lastActive: "2026-02-01T11:05:00",
+        submissions: [],
+        avgAccuracy: null,
+        avgTimePerDay: null,
+        grade: null,
+        timeline: [
+          {time: "11:05", event: "Enrolled"},
+          {time: "11:05", event: "Welcome email sent"}
+        ]
+      },
+      {
+        id: "adhya-001",
+        name: "Adhya Preetam",
+        email: "adhya@editrix.ai",
+        status: "active",
+        currentDay: 0,
+        enrolled: "2026-02-01T11:05:00",
+        lastActive: "2026-02-01T11:05:00",
+        submissions: [],
+        avgAccuracy: null,
+        avgTimePerDay: null,
+        grade: null,
+        timeline: [
+          {time: "11:05", event: "Enrolled"},
+          {time: "11:05", event: "Welcome email sent"}
+        ]
+      },
+      {
+        id: "meru-001",
+        name: "Meru",
+        email: "meru@editrix.ai",
+        status: "active",
+        currentDay: 0,
+        enrolled: "2026-02-01T11:07:00",
+        lastActive: "2026-02-01T11:07:00",
+        submissions: [],
+        avgAccuracy: null,
+        avgTimePerDay: null,
+        grade: null,
+        timeline: [
+          {time: "11:07", event: "Enrolled"},
+          {time: "11:07", event: "Welcome email sent"}
+        ]
+      },
+      {
+        id: "kishore-001",
+        name: "Kishore",
+        email: "kishore@aceternity.com",
+        status: "active",
+        currentDay: 0,
+        enrolled: "2026-02-01T11:22:00",
+        lastActive: "2026-02-01T11:22:00",
+        submissions: [],
+        avgAccuracy: null,
+        avgTimePerDay: null,
+        grade: null,
+        timeline: [
+          {time: "11:22", event: "Enrolled"},
+          {time: "11:22", event: "Welcome email sent"}
+        ]
+      },
+      {
+        id: "palak-001",
+        name: "Palak",
+        email: "palak@editrix.ai",
+        status: "active",
+        currentDay: 0,
+        enrolled: "2026-02-01T11:23:00",
+        lastActive: "2026-02-01T11:23:00",
+        submissions: [],
+        avgAccuracy: null,
+        avgTimePerDay: null,
+        grade: null,
+        timeline: [
+          {time: "11:23", event: "Enrolled"},
+          {time: "11:23", event: "Welcome email sent"}
+        ]
+      }
+    ];
+    
+    function getStatusBadge(status) {
+      const classes = {
+        'active': 'status-active',
+        'at-risk': 'status-at-risk',
+        'completed': 'status-completed',
+        'closed': 'status-closed'
+      };
+      return `<span class="status-badge ${classes[status] || 'status-active'}">${status}</span>`;
+    }
+    
+    function getGradeBadge(grade) {
+      if (!grade) return '—';
+      return `<span class="grade-badge grade-${grade}">${grade}</span>`;
+    }
+    
+    function formatTime(mins) {
+      if (!mins) return '—';
+      return `${mins} min`;
+    }
+    
+    function renderTable() {
+      const tbody = document.getElementById('studentsTableBody');
+      tbody.innerHTML = students.map(s => `
+        <tr>
+          <td>
+            <div class="student-name">${s.name}</div>
+            <div class="student-email">${s.email}</div>
+          </td>
+          <td>${getStatusBadge(s.status)}</td>
+          <td>Day ${s.currentDay}/10</td>
+          <td>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: ${s.currentDay * 10}%"></div>
+            </div>
+          </td>
+          <td>${s.avgAccuracy ? s.avgAccuracy + '%' : '—'}</td>
+          <td>${formatTime(s.avgTimePerDay)}</td>
+          <td>${new Date(s.lastActive).toLocaleString('en-IN', {hour: '2-digit', minute: '2-digit'})}</td>
+          <td>${getGradeBadge(s.grade)}</td>
+        </tr>
+      `).join('');
+    }
+    
+    function renderDetails() {
+      const container = document.getElementById('studentDetails');
+      container.innerHTML = students.map(s => `
+        <div class="student-detail">
+          <h3>
+            ${s.name}
+            ${getStatusBadge(s.status)}
+          </h3>
+          <div class="metrics-grid">
+            <div class="metric">
+              <div class="metric-label">Current Day</div>
+              <div class="metric-value">${s.currentDay}/10</div>
+            </div>
+            <div class="metric">
+              <div class="metric-label">Accuracy</div>
+              <div class="metric-value">${s.avgAccuracy || '—'}${s.avgAccuracy ? '%' : ''}</div>
+            </div>
+            <div class="metric">
+              <div class="metric-label">Avg Time/Day</div>
+              <div class="metric-value">${s.avgTimePerDay || '—'}${s.avgTimePerDay ? ' min' : ''}</div>
+            </div>
+            <div class="metric">
+              <div class="metric-label">Submissions</div>
+              <div class="metric-value">${s.submissions.length}</div>
+            </div>
+            <div class="metric">
+              <div class="metric-label">Nudges Sent</div>
+              <div class="metric-value">0</div>
+            </div>
+            <div class="metric">
+              <div class="metric-label">Grade</div>
+              <div class="metric-value">${s.grade || 'Pending'}</div>
+            </div>
+          </div>
+          <div class="timeline">
+            <strong>Activity Timeline:</strong>
+            ${s.timeline.map(t => `
+              <div class="timeline-item">
+                <span class="timeline-time">${t.time}</span>
+                <span>${t.event}</span>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      `).join('');
+    }
+    
+    function updateStats() {
+      document.getElementById('totalStudents').textContent = students.length;
+      document.getElementById('activeStudents').textContent = students.filter(s => s.status === 'active').length;
+      document.getElementById('atRiskStudents').textContent = students.filter(s => s.status === 'at-risk').length;
+      document.getElementById('completedStudents').textContent = students.filter(s => s.status === 'completed').length;
+      
+      const avgProgress = students.reduce((sum, s) => sum + (s.currentDay * 10), 0) / students.length;
+      document.getElementById('avgProgress').textContent = Math.round(avgProgress) + '%';
+      
+      document.getElementById('lastUpdated').textContent = new Date().toLocaleString('en-IN');
+    }
+    
+    // Initialize
+    renderTable();
+    renderDetails();
+    updateStats();
+  </script>
+</body>
+</html>

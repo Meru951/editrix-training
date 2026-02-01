@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Course Management | Diana Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #1a1a1a;
+      --ink-light: #6b7280;
+      --bg: #f3f4f6;
+      --card: #ffffff;
+      --accent: #10b981;
+      --accent-light: #d1fae5;
+      --purple: #8b5cf6;
+      --purple-light: #ede9fe;
+      --blue: #3b82f6;
+      --blue-light: #dbeafe;
+      --border: #e5e7eb;
+    }
+    
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.5;
+    }
+    
+    header {
+      background: var(--card);
+      padding: 1rem 2rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: var(--purple);
+    }
+    
+    nav a {
+      margin-left: 1.5rem;
+      color: var(--ink-light);
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+    
+    nav a:hover { color: var(--ink); }
+    nav a.active { color: var(--purple); font-weight: 500; }
+    
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    
+    h1 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .subtitle {
+      color: var(--ink-light);
+      margin-bottom: 2rem;
+    }
+    
+    /* Course Cards */
+    .courses-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    
+    .course-card {
+      background: var(--card);
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      border-left: 4px solid var(--accent);
+    }
+    
+    .course-card.chicago { border-left-color: var(--purple); }
+    .course-card.american { border-left-color: var(--blue); }
+    
+    .course-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 1rem;
+    }
+    
+    .course-title {
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+    
+    .course-badge {
+      font-size: 0.7rem;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      font-weight: 500;
+    }
+    
+    .badge-active { background: var(--accent-light); color: #065f46; }
+    .badge-new { background: var(--purple-light); color: #5b21b6; }
+    
+    .course-meta {
+      font-size: 0.85rem;
+      color: var(--ink-light);
+      margin-bottom: 1rem;
+    }
+    
+    .course-meta span {
+      display: inline-block;
+      margin-right: 1rem;
+    }
+    
+    .course-description {
+      font-size: 0.9rem;
+      color: var(--ink-light);
+      margin-bottom: 1rem;
+    }
+    
+    .course-stats {
+      display: flex;
+      gap: 1.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+    }
+    
+    .stat {
+      text-align: center;
+    }
+    
+    .stat-value {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+    
+    .stat-label {
+      font-size: 0.7rem;
+      color: var(--ink-light);
+      text-transform: uppercase;
+    }
+    
+    .course-actions {
+      margin-top: 1rem;
+      display: flex;
+      gap: 0.5rem;
+    }
+    
+    .btn {
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      cursor: pointer;
+      border: none;
+      font-weight: 500;
+    }
+    
+    .btn-primary {
+      background: var(--accent);
+      color: white;
+    }
+    
+    .btn-secondary {
+      background: var(--bg);
+      color: var(--ink);
+    }
+    
+    /* Enrollment Section */
+    .section {
+      background: var(--card);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    
+    .section h2 {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+    
+    .form-row {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-end;
+      flex-wrap: wrap;
+    }
+    
+    .form-group {
+      flex: 1;
+      min-width: 200px;
+    }
+    
+    .form-group label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+    
+    select, input {
+      width: 100%;
+      padding: 0.6rem;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-size: 0.9rem;
+    }
+    
+    /* Student List */
+    .student-list {
+      display: grid;
+      gap: 0.5rem;
+    }
+    
+    .student-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem;
+      background: var(--bg);
+      border-radius: 6px;
+    }
+    
+    .student-info {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    .student-name {
+      font-weight: 500;
+    }
+    
+    .student-courses {
+      display: flex;
+      gap: 0.5rem;
+    }
+    
+    .course-tag {
+      font-size: 0.7rem;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      background: var(--accent-light);
+      color: #065f46;
+    }
+    
+    .course-tag.chicago {
+      background: var(--purple-light);
+      color: #5b21b6;
+    }
+    
+    .course-tag.american {
+      background: var(--blue-light);
+      color: #1d4ed8;
+    }
+    
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: var(--ink-light);
+      font-size: 0.8rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">📚 Course Management</div>
+    <nav>
+      <a href="admin-dashboard.html">Students</a>
+      <a href="admin-courses.html" class="active">Courses</a>
+      <a href="admin-analytics.html">Analytics</a>
+    </nav>
+  </header>
+  
+  <main>
+    <h1>Course Catalogue</h1>
+    <p class="subtitle">Manage courses and enroll students</p>
+    
+    <!-- Course Cards -->
+    <div class="courses-grid">
+      <div class="course-card british">
+        <div class="course-header">
+          <div class="course-title">Proofreading Fundamentals<br><small>British English</small></div>
+          <span class="course-badge badge-active">Active</span>
+        </div>
+        <div class="course-meta">
+          <span>📅 10 days</span>
+          <span>🇬🇧 British style</span>
+        </div>
+        <div class="course-description">
+          Single quotes, British spelling, UK punctuation. The original Diana course.
+        </div>
+        <div class="course-stats">
+          <div class="stat">
+            <div class="stat-value">5</div>
+            <div class="stat-label">Enrolled</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value">0</div>
+            <div class="stat-label">Completed</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value">—</div>
+            <div class="stat-label">Avg Grade</div>
+          </div>
+        </div>
+        <div class="course-actions">
+          <button class="btn btn-primary">Enroll Student</button>
+          <button class="btn btn-secondary">Edit Course</button>
+        </div>
+      </div>
+      
+      <div class="course-card chicago">
+        <div class="course-header">
+          <div class="course-title">Checking Proofs<br><small>Chicago Manual of Style</small></div>
+          <span class="course-badge badge-new">New</span>
+        </div>
+        <div class="course-meta">
+          <span>📅 10 days</span>
+          <span>📖 CMOS 17th ed.</span>
+        </div>
+        <div class="course-description">
+          The gold standard for academic publishing. Footnotes, bibliography, Chicago conventions.
+        </div>
+        <div class="course-stats">
+          <div class="stat">
+            <div class="stat-value">0</div>
+            <div class="stat-label">Enrolled</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value">0</div>
+            <div class="stat-label">Completed</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value">—</div>
+            <div class="stat-label">Avg Grade</div>
+          </div>
+        </div>
+        <div class="course-actions">
+          <button class="btn btn-primary">Enroll Student</button>
+          <button class="btn btn-secondary">Edit Course</button>
+        </div>
+      </div>
+      
+      <div class="course-card american">
+        <div class="course-header">
+          <div class="course-title">Proofreading Fundamentals<br><small>American English</small></div>
+          <span class="course-badge badge-new">New</span>
+        </div>
+        <div class="course-meta">
+          <span>📅 10 days</span>
+          <span>🇺🇸 US style</span>
+        </div>
+        <div class="course-description">
+          Double quotes, American spelling, US punctuation. For American publishers and content.
+        </div>
+        <div class="course-stats">
+          <div class="stat">
+            <div class="stat-value">0</div>
+            <div class="stat-label">Enrolled</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value">0</div>
+            <div class="stat-label">Completed</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value">—</div>
+            <div class="stat-label">Avg Grade</div>
+          </div>
+        </div>
+        <div class="course-actions">
+          <button class="btn btn-primary">Enroll Student</button>
+          <button class="btn btn-secondary">Edit Course</button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Quick Enroll -->
+    <div class="section">
+      <h2>Quick Enroll</h2>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Student Email</label>
+          <input type="email" placeholder="student@example.com" id="enrollEmail">
+        </div>
+        <div class="form-group">
+          <label>Course</label>
+          <select id="enrollCourse">
+            <option value="proof-uk">British Proofreading</option>
+            <option value="proof-chicago">Chicago Manual of Style</option>
+            <option value="proof-us">American Proofreading</option>
+          </select>
+        </div>
+        <button class="btn btn-primary" onclick="enrollStudent()">Enroll →</button>
+      </div>
+    </div>
+    
+    <!-- Current Students -->
+    <div class="section">
+      <h2>Current Students</h2>
+      <div class="student-list">
+        <div class="student-row">
+          <div class="student-info">
+            <span class="student-name">Vidhi Gupta</span>
+            <span class="student-courses">
+              <span class="course-tag british">British</span>
+            </span>
+          </div>
+          <span>Day 0/10</span>
+        </div>
+        <div class="student-row">
+          <div class="student-info">
+            <span class="student-name">Adhya Preetam</span>
+            <span class="student-courses">
+              <span class="course-tag british">British</span>
+            </span>
+          </div>
+          <span>Day 0/10</span>
+        </div>
+        <div class="student-row">
+          <div class="student-info">
+            <span class="student-name">Meru</span>
+            <span class="student-courses">
+              <span class="course-tag british">British</span>
+            </span>
+          </div>
+          <span>Day 0/10</span>
+        </div>
+        <div class="student-row">
+          <div class="student-info">
+            <span class="student-name">Kishore</span>
+            <span class="student-courses">
+              <span class="course-tag british">British</span>
+            </span>
+          </div>
+          <span>Day 0/10</span>
+        </div>
+        <div class="student-row">
+          <div class="student-info">
+            <span class="student-name">Palak</span>
+            <span class="student-courses">
+              <span class="course-tag british">British</span>
+            </span>
+          </div>
+          <span>Day 0/10</span>
+        </div>
+      </div>
+    </div>
+  </main>
+  
+  <footer>
+    Diana Course Management · 3 courses available
+  </footer>
+  
+  <script>
+    function enrollStudent() {
+      const email = document.getElementById('enrollEmail').value;
+      const course = document.getElementById('enrollCourse').value;
+      
+      if (!email) {
+        alert('Please enter a student email');
+        return;
+      }
+      
+      // In production, this would call Diana's API
+      alert(`Enrolling ${email} in ${course}...\n\nThis will send a welcome email via Diana.`);
+    }
+  </script>
+</body>
+</html>

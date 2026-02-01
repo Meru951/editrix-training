@@ -1,0 +1,15 @@
+{
+  "id": "palak-001",
+  "email": "palak@editrix.ai",
+  "name": "Palak",
+  "background": {
+    "role": "unknown",
+    "reason_for_joining": "Referred by Meru",
+    "timezone": "Asia/Kolkata",
+    "enrolled_at": "2026-02-01T11:23:00+05:30"
+  },
+  "personality": {"notes": "New student"},
+  "progress": {"current_day": 0, "status": "active"},
+  "interactions": {"total_emails_sent": 1},
+  "flags": {"at_risk": false}
+}

@@ -1,0 +1,27 @@
+{
+  "id": "proof-uk",
+  "name": "British Proofreading",
+  "style_guide": "New Hart's Rules (Oxford)",
+  "style_guide_edition": "2nd edition, 2014",
+  "focus": "fiction",
+  "duration_days": 10,
+  "description": "Master proofreading fiction using New Hart's Rules — the definitive British English style guide. Learn to handle dialogue, narrative consistency, and the conventions of British literary publishing.",
+  "audience": ["UK fiction publishers", "Literary agents", "Freelance proofreaders", "Editorial assistants"],
+  "status": "active",
+  "conventions": {
+    "spelling": "British (-ise, -our, -re)",
+    "quote_style": "Single quotes first, double inside",
+    "punctuation_with_quotes": "Logical (outside unless part of quote)",
+    "dashes": "Spaced en-dash",
+    "date_format": "1 February 2026",
+    "serial_comma": "Optional"
+  },
+  "fiction_topics": [
+    "Dialogue punctuation",
+    "Character name consistency",
+    "Timeline and continuity",
+    "Narrative voice",
+    "Scene breaks",
+    "Chapter formatting"
+  ]
+}

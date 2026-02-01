@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apply | Editrix Editor Training</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #1a1a1a;
+      --ink-light: #6b7280;
+      --bg: #ffffff;
+      --bg-soft: #f9fafb;
+      --accent: #10b981;
+      --accent-hover: #059669;
+      --gradient-start: rgba(16, 185, 129, 0.08);
+      --gradient-end: rgba(168, 85, 247, 0.08);
+      --border: #e5e7eb;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg-soft);
+      color: var(--ink);
+      line-height: 1.6;
+      font-size: 16px;
+      min-height: 100vh;
+    }
+    
+    /* Header */
+    header {
+      padding: 1.25rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: white;
+      border-bottom: 1px solid var(--border);
+    }
+    
+    .logo {
+      font-weight: 600;
+      font-size: 1.25rem;
+      color: var(--ink);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .logo-dots {
+      display: flex;
+      gap: 3px;
+    }
+    
+    .logo-dots span {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+    
+    .logo-dots span:nth-child(1) { background: #f59e0b; }
+    .logo-dots span:nth-child(2) { background: #10b981; }
+    .logo-dots span:nth-child(3) { background: #3b82f6; }
+    .logo-dots span:nth-child(4) { background: #8b5cf6; }
+    .logo-dots span:nth-child(5) { background: #ec4899; }
+    .logo-dots span:nth-child(6) { background: #ef4444; }
+    
+    .nav-link {
+      color: var(--ink-light);
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+    
+    .nav-link:hover {
+      color: var(--ink);
+    }
+    
+    /* Main */
+    main {
+      max-width: 520px;
+      margin: 3rem auto;
+      padding: 0 1.5rem;
+    }
+    
+    .form-card {
+      background: white;
+      border-radius: 12px;
+      padding: 2.5rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    }
+    
+    h1 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    
+    .subtitle {
+      color: var(--ink-light);
+      margin-bottom: 2rem;
+      font-size: 0.95rem;
+    }
+    
+    /* Form */
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+      font-size: 0.9rem;
+    }
+    
+    input[type="text"],
+    input[type="email"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      font-family: inherit;
+      font-size: 1rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: white;
+      color: var(--ink);
+      transition: border-color 0.2s;
+    }
+    
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+    
+    textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+    
+    .hint {
+      font-size: 0.8rem;
+      color: var(--ink-light);
+      margin-top: 0.35rem;
+    }
+    
+    /* Commitment Box */
+    .commitment-section {
+      background: var(--bg-soft);
+      padding: 1.25rem;
+      border-radius: 8px;
+      margin: 1.5rem 0;
+    }
+    
+    .commitment-section p {
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+      color: var(--ink-light);
+    }
+    
+    .checkbox-group {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+    
+    .checkbox-group input[type="checkbox"] {
+      margin-top: 0.25rem;
+      width: 18px;
+      height: 18px;
+      accent-color: var(--accent);
+      flex-shrink: 0;
+    }
+    
+    .checkbox-label {
+      font-size: 0.9rem;
+      line-height: 1.5;
+      color: var(--ink-light);
+    }
+    
+    .checkbox-label strong {
+      color: var(--ink);
+    }
+    
+    /* Submit */
+    .submit-section {
+      margin-top: 2rem;
+    }
+    
+    .submit-button {
+      width: 100%;
+      background: var(--accent);
+      color: white;
+      padding: 0.875rem 2rem;
+      font-family: inherit;
+      font-size: 1rem;
+      font-weight: 500;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    
+    .submit-button:hover {
+      background: var(--accent-hover);
+    }
+    
+    .submit-note {
+      margin-top: 0.75rem;
+      font-size: 0.85rem;
+      color: var(--ink-light);
+      text-align: center;
+    }
+    
+    /* Back link */
+    .back-link {
+      display: block;
+      text-align: center;
+      margin-top: 1.5rem;
+      color: var(--ink-light);
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+    
+    .back-link:hover {
+      color: var(--accent);
+    }
+    
+    /* Confirmation */
+    .confirmation {
+      display: none;
+      text-align: center;
+      padding: 2rem 0;
+    }
+    
+    .confirmation.show {
+      display: block;
+    }
+    
+    .confirmation .check-icon {
+      width: 64px;
+      height: 64px;
+      background: var(--accent);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+      color: white;
+      font-size: 2rem;
+    }
+    
+    .confirmation h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    
+    .confirmation > p {
+      color: var(--ink-light);
+      margin-bottom: 2rem;
+    }
+    
+    .confirmation .next-steps {
+      background: var(--bg-soft);
+      padding: 1.5rem;
+      border-radius: 8px;
+      text-align: left;
+    }
+    
+    .confirmation .next-steps h3 {
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+    
+    .confirmation .next-steps ol {
+      margin-left: 1.25rem;
+      color: var(--ink-light);
+      font-size: 0.9rem;
+    }
+    
+    .confirmation .next-steps li {
+      margin-bottom: 0.5rem;
+    }
+    
+    .form-container.hide {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  
+  <header>
+    <a href="landing.html" class="logo">
+      <div class="logo-dots">
+        <span></span><span></span><span></span><span></span><span></span><span></span>
+      </div>
+      Editrix
+    </a>
+    <a href="landing.html" class="nav-link">← Back</a>
+  </header>
+  
+  <main>
+    <div class="form-card">
+      <div class="form-container" id="formContainer">
+        <h1>Apply for the Programme</h1>
+        <p class="subtitle">Takes about 2 minutes</p>
+        
+        <form id="signupForm">
+          <div class="form-group">
+            <label for="name">Your name</label>
+            <input type="text" id="name" name="name" required placeholder="As you'd like it on your certificate">
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" id="email" name="email" required placeholder="Where I'll send your lessons">
+          </div>
+          
+          <div class="form-group">
+            <label for="role">What describes you best?</label>
+            <select id="role" name="role" required>
+              <option value="">Select one...</option>
+              <option value="freelancer">Freelance editor (aspiring or current)</option>
+              <option value="intern">Publishing intern</option>
+              <option value="student">Student</option>
+              <option value="writer">Writer or author</option>
+              <option value="career-changer">Career changer</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="timezone">Your time zone</label>
+            <select id="timezone" name="timezone" required>
+              <option value="">Select one...</option>
+              <option value="Asia/Kolkata">India (IST)</option>
+              <option value="Europe/London">UK (GMT/BST)</option>
+              <option value="America/New_York">US Eastern</option>
+              <option value="America/Los_Angeles">US Pacific</option>
+              <option value="Europe/Paris">Central Europe</option>
+              <option value="Asia/Singapore">Singapore</option>
+              <option value="Australia/Sydney">Australia Eastern</option>
+              <option value="other">Other</option>
+            </select>
+            <p class="hint">Lessons arrive at 6:00 AM your time</p>
+          </div>
+          
+          <div class="form-group">
+            <label for="why">Why do you want to learn proofreading?</label>
+            <textarea id="why" name="why" required placeholder="A few sentences is fine"></textarea>
+          </div>
+          
+          <div class="commitment-section">
+            <p>This programme requires about 1–2 hours per day for 10 days. Each lesson builds on the previous one.</p>
+            
+            <div class="checkbox-group">
+              <input type="checkbox" id="commitment" name="commitment" required>
+              <label for="commitment" class="checkbox-label">
+                <strong>I'm ready to commit.</strong> I can dedicate the time, and I understand that completing all 10 days is what earns the certificate.
+              </label>
+            </div>
+          </div>
+          
+          <div class="submit-section">
+            <button type="submit" class="submit-button">Begin My Training</button>
+            <p class="submit-note">You'll receive your welcome email within 24 hours</p>
+          </div>
+        </form>
+        
+        <a href="landing.html" class="back-link">← Back to programme details</a>
+      </div>
+      
+      <!-- Confirmation -->
+      <div class="confirmation" id="confirmation">
+        <div class="check-icon">✓</div>
+        <h2>You're In</h2>
+        <p>Check your inbox for your welcome email from Diana.</p>
+        
+        <div class="next-steps">
+          <h3>What happens next:</h3>
+          <ol>
+            <li>Read your welcome email — it explains how everything works</li>
+            <li>Day 1 begins tomorrow at 6:00 AM your time</li>
+            <li>Your first lesson and exercises will be waiting</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </main>
+  
+  <script>
+    document.getElementById('signupForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const formData = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        role: document.getElementById('role').value,
+        timezone: document.getElementById('timezone').value,
+        why: document.getElementById('why').value,
+        commitment: document.getElementById('commitment').checked
+      };
+      
+      console.log('Form submitted:', formData);
+      
+      // TODO: Connect to backend / AgentMail
+      
+      // Show confirmation
+      document.getElementById('formContainer').classList.add('hide');
+      document.getElementById('confirmation').classList.add('show');
+      
+      window.scrollTo(0, 0);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editor Training | Editrix</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #1a1a1a;
+      --ink-light: #6b7280;
+      --bg: #ffffff;
+      --bg-soft: #f9fafb;
+      --accent: #10b981;
+      --accent-hover: #059669;
+      --gradient-start: rgba(16, 185, 129, 0.08);
+      --gradient-end: rgba(168, 85, 247, 0.08);
+      --border: #e5e7eb;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.6;
+      font-size: 16px;
+    }
+    
+    /* Header */
+    header {
+      padding: 1.25rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+    }
+    
+    .logo {
+      font-weight: 600;
+      font-size: 1.25rem;
+      color: var(--ink);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .logo-dots {
+      display: flex;
+      gap: 3px;
+    }
+    
+    .logo-dots span {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+    
+    .logo-dots span:nth-child(1) { background: #f59e0b; }
+    .logo-dots span:nth-child(2) { background: #10b981; }
+    .logo-dots span:nth-child(3) { background: #3b82f6; }
+    .logo-dots span:nth-child(4) { background: #8b5cf6; }
+    .logo-dots span:nth-child(5) { background: #ec4899; }
+    .logo-dots span:nth-child(6) { background: #ef4444; }
+    
+    .nav-link {
+      color: var(--ink-light);
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+    
+    .nav-link:hover {
+      color: var(--ink);
+    }
+    
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+      padding: 5rem 2rem;
+      text-align: center;
+    }
+    
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    
+    .hero h1 {
+      font-size: 2.75rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+    
+    .hero .subtitle {
+      font-size: 1.125rem;
+      color: var(--ink-light);
+      margin-bottom: 2rem;
+    }
+    
+    .cta-button {
+      display: inline-block;
+      background: var(--accent);
+      color: white;
+      padding: 0.875rem 2rem;
+      font-size: 1rem;
+      font-weight: 500;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.2s;
+    }
+    
+    .cta-button:hover {
+      background: var(--accent-hover);
+    }
+    
+    .cta-note {
+      margin-top: 0.75rem;
+      font-size: 0.875rem;
+      color: var(--ink-light);
+    }
+    
+    /* Sections */
+    section {
+      padding: 4rem 2rem;
+    }
+    
+    section:nth-child(even) {
+      background: var(--bg-soft);
+    }
+    
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+    
+    p {
+      margin-bottom: 1rem;
+      color: var(--ink-light);
+    }
+    
+    p strong {
+      color: var(--ink);
+    }
+    
+    /* Stages */
+    .stages {
+      list-style: none;
+      margin-top: 1.5rem;
+    }
+    
+    .stages li {
+      padding: 1.25rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    
+    .stages li:last-child {
+      border-bottom: none;
+    }
+    
+    .stage-title {
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 0.25rem;
+    }
+    
+    .stage-desc {
+      font-size: 0.9rem;
+      color: var(--ink-light);
+    }
+    
+    /* Commitment Box */
+    .commitment-box {
+      background: white;
+      border: 1px solid var(--border);
+      padding: 1.5rem;
+      border-radius: 12px;
+      margin: 1.5rem 0;
+    }
+    
+    .commitment-box h3 {
+      font-size: 1rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+    
+    .commitment-box ul {
+      margin-left: 1.25rem;
+      color: var(--ink-light);
+    }
+    
+    .commitment-box li {
+      margin-bottom: 0.5rem;
+    }
+    
+    /* Two Columns */
+    .two-columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 1.5rem;
+    }
+    
+    @media (max-width: 640px) {
+      .two-columns {
+        grid-template-columns: 1fr;
+      }
+      
+      .hero h1 {
+        font-size: 2rem;
+      }
+    }
+    
+    .column h3 {
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin-bottom: 0.75rem;
+      color: var(--accent);
+    }
+    
+    .column.not-for h3 {
+      color: var(--ink-light);
+    }
+    
+    .column ul {
+      list-style: none;
+    }
+    
+    .column li {
+      padding: 0.35rem 0;
+      padding-left: 1.5rem;
+      position: relative;
+      font-size: 0.9rem;
+      color: var(--ink-light);
+    }
+    
+    .column li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
+    
+    .column.not-for li::before {
+      content: "—";
+      color: var(--ink-light);
+    }
+    
+    /* Outcomes */
+    .outcomes {
+      list-style: none;
+      margin-top: 1.5rem;
+    }
+    
+    .outcomes li {
+      padding: 0.75rem 0;
+      padding-left: 2rem;
+      position: relative;
+      color: var(--ink-light);
+    }
+    
+    .outcomes li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
+    
+    .outcomes li strong {
+      color: var(--ink);
+    }
+    
+    /* Diana */
+    .diana-intro {
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-start;
+      margin-top: 1.5rem;
+      background: white;
+      border: 1px solid var(--border);
+      padding: 1.5rem;
+      border-radius: 12px;
+    }
+    
+    .diana-avatar {
+      width: 56px;
+      height: 56px;
+      background: linear-gradient(135deg, var(--accent) 0%, #8b5cf6 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.5rem;
+      font-weight: 500;
+      flex-shrink: 0;
+    }
+    
+    .diana-text {
+      flex: 1;
+    }
+    
+    .diana-text p {
+      font-size: 0.95rem;
+      font-style: italic;
+    }
+    
+    .diana-text .signature {
+      font-style: normal;
+      margin-top: 1rem;
+      font-weight: 500;
+      color: var(--ink);
+    }
+    
+    /* Final CTA */
+    .final-cta {
+      text-align: center;
+      padding: 5rem 2rem;
+      background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+    }
+    
+    .final-cta h2 {
+      color: var(--ink);
+      margin-bottom: 0.5rem;
+    }
+    
+    .final-cta p {
+      margin-bottom: 2rem;
+    }
+    
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: var(--ink-light);
+      font-size: 0.875rem;
+      border-top: 1px solid var(--border);
+    }
+    
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  
+  <header>
+    <a href="https://editrix.ai" class="logo">
+      <div class="logo-dots">
+        <span></span><span></span><span></span><span></span><span></span><span></span>
+      </div>
+      Editrix
+    </a>
+    <a href="https://editrix.ai" class="nav-link">← Back to Editrix</a>
+  </header>
+  
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <h1>Learn Professional Proofreading in 10 Days</h1>
+      <p class="subtitle">A structured training programme for aspiring editors. Complete it, and you'll be ready for real work.</p>
+      <a href="mailto:diana-editrix@agentmail.to?subject=Application%20for%20Editor%20Training&body=Hi%20Diana%2C%0A%0AI'd%20like%20to%20apply%20for%20the%20Proofreading%20Programme.%0A%0AMy%20name%3A%20%0AMy%20timezone%3A%20%0AWhy%20I%20want%20to%20learn%20proofreading%3A%20%0A%0AI%20can%20commit%201-2%20hours%20daily%20for%2010%20days.%0A%0AThank%20you!" class="cta-button">Apply for the Programme</a>
+      <p class="cta-note">Free. Focused. For people who finish what they start.</p>
+    </div>
+  </section>
+  
+  <!-- What You'll Learn -->
+  <section>
+    <div class="container">
+      <h2>What You'll Learn</h2>
+      <p>In ten days, you'll build the skills that separate amateur proofreaders from professionals:</p>
+      <ul class="stages">
+        <li>
+          <div class="stage-title">Days 1–2: Foundations</div>
+          <div class="stage-desc">Train your eye to catch what spell-check misses. Learn the difference between proofreading and copyediting.</div>
+        </li>
+        <li>
+          <div class="stage-title">Days 3–4: Punctuation & Dialogue</div>
+          <div class="stage-desc">Master comma rules, dialogue conventions, and the subtle art of hyphens versus dashes.</div>
+        </li>
+        <li>
+          <div class="stage-title">Days 5–6: Consistency</div>
+          <div class="stage-desc">Track names, spellings, and style decisions across a manuscript. Build professional style sheets.</div>
+        </li>
+        <li>
+          <div class="stage-title">Days 7–8: Integration</div>
+          <div class="stage-desc">Put all your skills together on real manuscript pages. Learn when to fix, when to query, when to leave alone.</div>
+        </li>
+        <li>
+          <div class="stage-title">Days 9–10: Speed & Assessment</div>
+          <div class="stage-desc">Build speed without losing accuracy. Complete your final assessment and earn your certificate.</div>
+        </li>
+      </ul>
+    </div>
+  </section>
+  
+  <!-- The Commitment -->
+  <section>
+    <div class="container">
+      <h2>A Word Before You Apply</h2>
+      <p>This programme is free, but it isn't casual. I'm looking for people who take their development seriously — because those are the people I want to work with afterwards.</p>
+      
+      <div class="commitment-box">
+        <h3>What this requires from you:</h3>
+        <ul>
+          <li><strong>1–2 hours per day</strong> for 10 consecutive days</li>
+          <li><strong>Daily engagement</strong> — each lesson builds on the last</li>
+          <li><strong>Completion</strong> — the certificate goes to those who finish</li>
+        </ul>
+      </div>
+      
+      <p>I've designed this programme to set you up for success. If you show up each day, you will improve. But I can't want it more than you do.</p>
+      
+      <p>If now isn't the right time — if work is overwhelming, if travel is coming up, if life is chaotic — that's completely fine. The programme will still be here when you're ready. Better to wait than to start and abandon it halfway.</p>
+    </div>
+  </section>
+  
+  <!-- Who This Is For -->
+  <section>
+    <div class="container">
+      <h2>Is This Right for You?</h2>
+      
+      <div class="two-columns">
+        <div class="column">
+          <h3>This is for you if:</h3>
+          <ul>
+            <li>You want to work as a freelance editor</li>
+            <li>You're an intern learning the craft</li>
+            <li>You're a writer sharpening your own eye</li>
+            <li>You're changing careers into publishing</li>
+            <li>You can commit 10 days of focused effort</li>
+          </ul>
+        </div>
+        <div class="column not-for">
+          <h3>This might not be for you if:</h3>
+          <ul>
+            <li>You're looking for something passive</li>
+            <li>You're not sure you can make the time</li>
+            <li>You tend to start courses but not finish them</li>
+            <li>You want to learn "eventually"</li>
+          </ul>
+        </div>
+      </div>
+      
+      <p style="margin-top: 2rem;">No judgement either way. But better to know yourself before you begin.</p>
+    </div>
+  </section>
+  
+  <!-- Your Instructor -->
+  <section>
+    <div class="container">
+      <h2>Your Instructor</h2>
+      
+      <div class="diana-intro">
+        <div class="diana-avatar">D</div>
+        <div class="diana-text">
+          <p>"I'm Diana. I'll be with you every step of these 10 days — sending your lessons, reviewing your exercises, answering your questions. My job is to help you become the kind of editor publishers want to hire: accurate, consistent, and reliable."</p>
+          <p class="signature">— Diana, Editor Training</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- What You Get -->
+  <section>
+    <div class="container">
+      <h2>What Successful Graduates Get</h2>
+      <ul class="outcomes">
+        <li><strong>A certificate</strong> proving you completed professional training</li>
+        <li><strong>A portfolio-ready skill</strong> you can offer to publishers and authors</li>
+        <li><strong>Priority consideration</strong> for paid freelance work with Editrix</li>
+        <li><strong>Confidence</strong> that you know what you're doing</li>
+      </ul>
+    </div>
+  </section>
+  
+  <!-- Final CTA -->
+  <section class="final-cta">
+    <div class="container">
+      <h2>Ready to Begin?</h2>
+      <p>Ten days. Real skills. Your first step into professional editing.</p>
+      <a href="mailto:diana-editrix@agentmail.to?subject=Application%20for%20Editor%20Training&body=Hi%20Diana%2C%0A%0AI'd%20like%20to%20apply%20for%20the%20Proofreading%20Programme.%0A%0AMy%20name%3A%20%0AMy%20timezone%3A%20%0AWhy%20I%20want%20to%20learn%20proofreading%3A%20%0A%0AI%20can%20commit%201-2%20hours%20daily%20for%2010%20days.%0A%0AThank%20you!" class="cta-button">Apply for the Programme</a>
+      <p class="cta-note">You'll receive your welcome email within 24 hours.</p>
+    </div>
+  </section>
+  
+  <footer>
+    <p>Editrix Editor Training · Questions? <a href="mailto:diana-editrix@agentmail.to">Contact Diana</a></p>
+  </footer>
+  
+</body>
+</html>

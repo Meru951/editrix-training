@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson | Proofreading Course</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.8;
+            color: #333;
+            background: #fafafa;
+        }
+        header {
+            background: #1a1a2e;
+            color: white;
+            padding: 20px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header h1 { font-size: 1.2rem; font-weight: normal; }
+        header a { color: white; text-decoration: none; opacity: 0.8; }
+        header a:hover { opacity: 1; }
+        .container {
+            max-width: 750px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .lesson-header {
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #eee;
+        }
+        .lesson-header .stage {
+            color: #666;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .lesson-header h2 {
+            font-size: 2rem;
+            margin: 10px 0;
+            color: #1a1a2e;
+        }
+        .lesson-content {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .lesson-content h3 {
+            font-size: 1.4rem;
+            margin: 30px 0 15px;
+            color: #1a1a2e;
+        }
+        .lesson-content h3:first-child { margin-top: 0; }
+        .lesson-content p { margin-bottom: 15px; }
+        .lesson-content ul, .lesson-content ol {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+        .lesson-content li { margin-bottom: 10px; }
+        .lesson-content blockquote {
+            border-left: 4px solid #4a9;
+            padding: 15px 20px;
+            margin: 20px 0;
+            background: #f8f8f8;
+            font-style: italic;
+        }
+        .lesson-content code {
+            background: #f5f5f5;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+        .example-box {
+            background: #fffde7;
+            border: 1px solid #fff59d;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .example-box strong { color: #f9a825; }
+        .key-point {
+            background: #e8f5e9;
+            border-left: 4px solid #4a9;
+            padding: 15px 20px;
+            margin: 20px 0;
+        }
+        .lesson-footer {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 2px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: #1a1a2e;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        .btn:hover { background: #2a2a4e; }
+        .btn-secondary {
+            background: white;
+            color: #1a1a2e;
+            border: 2px solid #1a1a2e;
+        }
+        .loading { text-align: center; padding: 60px; color: #666; }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Proofreading Course</h1>
+        <a href="dashboard.html">← Back to Dashboard</a>
+    </header>
+    
+    <div class="container">
+        <div class="lesson-header">
+            <span class="stage" id="stage-label">Stage 1</span>
+            <h2 id="lesson-title">Loading...</h2>
+        </div>
+        
+        <div class="lesson-content" id="lesson-content">
+            <div class="loading">Loading lesson content...</div>
+        </div>
+        
+        <div class="lesson-footer">
+            <a href="dashboard.html" class="btn btn-secondary">← Dashboard</a>
+            <a href="#" class="btn" id="exercises-btn">Start Exercises →</a>
+        </div>
+    </div>
+    
+    <script>
+        // Get day from URL params
+        const params = new URLSearchParams(window.location.search);
+        const day = parseInt(params.get('day')) || 1;
+        
+        // Map day to stage and lesson file
+        const dayMap = {
+            1: { stage: 1, file: 'day-1-lesson.md', title: 'What Proofreaders Actually Do' },
+            2: { stage: 1, file: 'day-2-lesson.md', title: 'Training Your Eye' },
+            3: { stage: 2, file: 'day-3-lesson.md', title: 'Punctuation Rules' },
+            4: { stage: 2, file: 'day-4-lesson.md', title: 'Dialogue & Dashes' },
+            5: { stage: 3, file: 'day-5-lesson.md', title: 'The Consistency Problem' },
+            6: { stage: 3, file: 'day-6-lesson.md', title: 'Building Style Sheets' },
+            7: { stage: 4, file: 'day-7-lesson.md', title: 'Putting It Together' },
+            8: { stage: 4, file: 'day-8-lesson.md', title: 'Queries & Judgment' },
+            9: { stage: 5, file: 'day-9-lesson.md', title: 'Speed Without Sacrifice' },
+            10: { stage: 5, file: 'day-10-lesson.md', title: 'Final Assessment' }
+        };
+        
+        const info = dayMap[day];
+        
+        // Update header
+        document.getElementById('stage-label').textContent = `Stage ${info.stage} — Day ${day}`;
+        document.getElementById('lesson-title').textContent = info.title;
+        document.title = `Day ${day}: ${info.title} | Proofreading Course`;
+        
+        // Update exercises button
+        document.getElementById('exercises-btn').href = `exercise.html?stage=${info.stage}&day=${day}`;
+        
+        // Load lesson content from curriculum folder
+        fetch(`../curriculum/stage-${info.stage}/${info.file}`)
+            .then(response => {
+                if (!response.ok) throw new Error('Lesson not found');
+                return response.text();
+            })
+            .then(markdown => {
+                // Parse markdown and insert
+                document.getElementById('lesson-content').innerHTML = marked.parse(markdown);
+            })
+            .catch(error => {
+                document.getElementById('lesson-content').innerHTML = `
+                    <p>Lesson content is being prepared. Please check back soon.</p>
+                    <p><a href="dashboard.html">Return to dashboard</a></p>
+                `;
+            });
+        
+        // Save progress
+        const progress = JSON.parse(localStorage.getItem('courseProgress') || '{}');
+        if (!progress.lessonsViewed) progress.lessonsViewed = [];
+        if (!progress.lessonsViewed.includes(day)) {
+            progress.lessonsViewed.push(day);
+            localStorage.setItem('courseProgress', JSON.stringify(progress));
+        }
+    </script>
+</body>
+</html>

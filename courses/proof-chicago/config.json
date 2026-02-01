@@ -1,0 +1,27 @@
+{
+  "id": "proof-chicago",
+  "name": "American Proofreading",
+  "style_guide": "Chicago Manual of Style",
+  "style_guide_edition": "17th edition, 2017",
+  "focus": "fiction",
+  "duration_days": 10,
+  "description": "Master proofreading fiction using the Chicago Manual of Style — the standard for American trade publishing. Learn to handle dialogue, narrative consistency, and the conventions of US literary publishing.",
+  "audience": ["US fiction publishers", "Literary agents", "Freelance proofreaders", "Editorial assistants"],
+  "status": "active",
+  "conventions": {
+    "spelling": "American (-ize, -or, -er)",
+    "quote_style": "Double quotes first, single inside",
+    "punctuation_with_quotes": "American style (inside quotes always)",
+    "dashes": "Closed em-dash (no spaces)",
+    "date_format": "February 1, 2026",
+    "serial_comma": "Required"
+  },
+  "fiction_topics": [
+    "Dialogue punctuation",
+    "Character name consistency",
+    "Timeline and continuity",
+    "Narrative voice",
+    "Scene breaks",
+    "Chapter formatting"
+  ]
+}

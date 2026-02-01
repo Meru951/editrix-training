@@ -1,0 +1,83 @@
+{
+  "id": "vidyarthi-final-test",
+  "email": "vidyarthi@example.com",
+  "name": "Vidyarthi",
+  
+  "background": {
+    "role": "test-student",
+    "reason_for_joining": "I want to become a professional proofreader.",
+    "prior_experience": "none",
+    "timezone": "Asia/Kolkata",
+    "enrolled_at": "2026-02-01T10:00:00+05:30"
+  },
+  
+  "personality": {
+    "communication_style": "casual",
+    "response_speed": "moderate",
+    "asks_questions": false,
+    "needs_encouragement": true,
+    "self_motivated": true,
+    "perfectionist": false,
+    "notes": "Test student. Responded well to retake opportunity."
+  },
+  
+  "learning_profile": {
+    "pace": "steady",
+    "best_time_of_day": "morning",
+    "attention_span": "medium",
+    "learns_by": "doing",
+    "handles_feedback": "well"
+  },
+  
+  "strengths": [
+    {"skill": "commitment", "confidence": "high", "evidence": "All 10 days on time"},
+    {"skill": "improvement", "confidence": "high", "evidence": "B→A via retake"},
+    {"skill": "consistency", "confidence": "medium", "evidence": "85% on Stage 3"}
+  ],
+  
+  "weaknesses": [
+    {"skill": "punctuation", "severity": "moderate", "evidence": "75% on Day 3", "intervention": "Focused review before retake"},
+    {"skill": "compound_adjectives", "severity": "mild", "evidence": "Missed several in tests"}
+  ],
+  
+  "progress": {
+    "current_day": 10,
+    "current_stage": 5,
+    "status": "completed",
+    "accuracy_trend": "improving",
+    "commitment_score": 100
+  },
+  
+  "interactions": {
+    "total_emails_sent": 14,
+    "total_replies_received": 1,
+    "questions_asked": [],
+    "tone_of_replies": "positive",
+    "nudges_sent": 0,
+    "last_interaction": "2026-02-01T10:10:00+05:30"
+  },
+  
+  "support_strategy": {
+    "encouragement_level": "medium",
+    "feedback_style": "direct",
+    "check_in_frequency": "as-needed",
+    "custom_notes": "Responded well to retake opportunity. Shows growth mindset."
+  },
+  
+  "flags": {
+    "at_risk": false,
+    "at_risk_reason": null,
+    "incident_history": [],
+    "special_handling": null
+  },
+  
+  "outcome": {
+    "original_grade": "B",
+    "final_grade": "A",
+    "upgraded_via_retake": true,
+    "certificate_issued": true,
+    "invited_to_pool": true,
+    "feedback_given": "Strong improvement. Shows dedication.",
+    "would_recommend": true
+  }
+}

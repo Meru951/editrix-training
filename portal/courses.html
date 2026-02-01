@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Choose Your Course | Editrix Editor Training</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #1a1a1a;
+      --ink-light: #6b7280;
+      --bg: #ffffff;
+      --bg-soft: #f9fafb;
+      --accent: #10b981;
+      --accent-hover: #059669;
+      --purple: #8b5cf6;
+      --border: #e5e7eb;
+    }
+    
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.6;
+    }
+    
+    header {
+      padding: 1.25rem 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+    
+    .logo {
+      font-weight: 600;
+      font-size: 1.25rem;
+      color: var(--ink);
+      text-decoration: none;
+    }
+    
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
+    
+    .hero {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    
+    h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+    
+    .subtitle {
+      color: var(--ink-light);
+      font-size: 1.1rem;
+    }
+    
+    .courses-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+    
+    .course-card {
+      background: var(--bg-soft);
+      border-radius: 12px;
+      padding: 2rem;
+      border: 2px solid var(--border);
+      transition: all 0.2s;
+    }
+    
+    .course-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+    
+    .course-card.british { border-top: 4px solid var(--accent); }
+    .course-card.american { border-top: 4px solid var(--purple); }
+    
+    .course-flag { font-size: 3rem; margin-bottom: 1rem; }
+    
+    .course-title {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+    
+    .course-guide {
+      color: var(--ink-light);
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+      font-style: italic;
+    }
+    
+    .course-description {
+      font-size: 0.95rem;
+      color: var(--ink-light);
+      margin-bottom: 1.5rem;
+    }
+    
+    .conventions {
+      background: white;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+      font-size: 0.85rem;
+    }
+    
+    .conventions h4 {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      color: var(--ink-light);
+      margin-bottom: 0.75rem;
+    }
+    
+    .convention-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.35rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    
+    .convention-row:last-child { border-bottom: none; }
+    
+    .convention-label { color: var(--ink-light); }
+    .convention-value { font-weight: 500; }
+    
+    .course-cta {
+      display: block;
+      width: 100%;
+      padding: 0.875rem;
+      text-align: center;
+      background: var(--accent);
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background 0.2s;
+    }
+    
+    .course-cta:hover { background: var(--accent-hover); }
+    
+    .course-card.american .course-cta { background: var(--purple); }
+    .course-card.american .course-cta:hover { background: #7c3aed; }
+    
+    .best-for {
+      margin-top: 1.25rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.85rem;
+      color: var(--ink-light);
+    }
+    
+    footer {
+      text-align: center;
+      padding: 3rem 2rem;
+      color: var(--ink-light);
+    }
+    
+    footer a { color: var(--accent); text-decoration: none; }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="landing.html" class="logo">Editrix Training</a>
+  </header>
+  
+  <main>
+    <div class="hero">
+      <h1>Choose Your Course</h1>
+      <p class="subtitle">Fiction proofreading. Two standards. Pick the one that matches your market.</p>
+    </div>
+    
+    <div class="courses-grid">
+      <!-- British Proofreading -->
+      <div class="course-card british">
+        <div class="course-flag">🇬🇧</div>
+        <h2 class="course-title">British Proofreading</h2>
+        <div class="course-guide">New Hart's Rules (Oxford)</div>
+        <p class="course-description">
+          Proofread fiction using New Hart's Rules. Handle dialogue, narrative consistency, and the conventions of British literary publishing.
+        </p>
+        
+        <div class="conventions">
+          <h4>Key Conventions</h4>
+          <div class="convention-row">
+            <span class="convention-label">Quotes</span>
+            <span class="convention-value">'Single first'</span>
+          </div>
+          <div class="convention-row">
+            <span class="convention-label">Spelling</span>
+            <span class="convention-value">colour, organise</span>
+          </div>
+          <div class="convention-row">
+            <span class="convention-label">Dashes</span>
+            <span class="convention-value">Spaced en-dash ( – )</span>
+          </div>
+          <div class="convention-row">
+            <span class="convention-label">Dates</span>
+            <span class="convention-value">1 February 2026</span>
+          </div>
+          <div class="convention-row">
+            <span class="convention-label">Serial comma</span>
+            <span class="convention-value">Optional</span>
+          </div>
+        </div>
+        
+        <a href="mailto:diana-editrix@agentmail.to?subject=Apply: British Proofreading (New Hart's Rules)&body=I'd like to enroll in British Proofreading.%0A%0AMy name:%0AMy timezone:%0A" class="course-cta">Apply for This Course →</a>
+        
+        <div class="best-for">
+          <strong>Best for:</strong> UK fiction publishers, literary agents, Commonwealth markets
+        </div>
+      </div>
+      
+      <!-- American Proofreading -->
+      <div class="course-card american">
+        <div class="course-flag">🇺🇸</div>
+        <h2 class="course-title">American Proofreading</h2>
+        <div class="course-guide">Chicago Manual of Style (17th ed.)</div>
+        <p class="course-description">
+          Proofread fiction using the Chicago Manual of Style. Handle dialogue, narrative consistency, and the conventions of American trade publishing.
+        </p>
+        
+        <div class="conventions">
+          <h4>Key Conventions</h4>
+          <div class="convention-row">
+            <span class="convention-label">Quotes</span>
+            <span class="convention-value">"Double first"</span>
+          </div>
+          <div class="convention-row">
+            <span class="convention-label">Spelling</span>
+            <span class="convention-value">color, organize</span>
+          </div>
+          <div class="convention-row">
+            <span class="convention-label">Dashes</span>
+            <span class="convention-value">Closed em-dash (—)</span>
+          </div>
+          <div class="convention-row">
+            <span class="convention-label">Dates</span>
+            <span class="convention-value">February 1, 2026</span>
+          </div>
+          <div class="convention-row">
+            <span class="convention-label">Serial comma</span>
+            <span class="convention-value">Required</span>
+          </div>
+        </div>
+        
+        <a href="mailto:diana-editrix@agentmail.to?subject=Apply: American Proofreading (Chicago Manual)&body=I'd like to enroll in American Proofreading.%0A%0AMy name:%0AMy timezone:%0A" class="course-cta">Apply for This Course →</a>
+        
+        <div class="best-for">
+          <strong>Best for:</strong> US fiction publishers, literary agents, American trade market
+        </div>
+      </div>
+    </div>
+  </main>
+  
+  <footer>
+    <p>Not sure which to choose? <a href="mailto:diana-editrix@agentmail.to">Ask Diana</a></p>
+  </footer>
+</body>
+</html>

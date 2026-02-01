@@ -1,0 +1,59 @@
+{
+  "id": "meru-001",
+  "email": "meru@editrix.ai",
+  "name": "Meru",
+  
+  "background": {
+    "role": "founder",
+    "reason_for_joining": "Learning alongside first students to experience the programme firsthand",
+    "prior_experience": "professional",
+    "timezone": "Asia/Kolkata",
+    "enrolled_at": "2026-02-01T11:07:00+05:30"
+  },
+  
+  "personality": {
+    "communication_style": "direct",
+    "notes": "Editrix founder. Experiencing the programme as a student to evaluate it."
+  },
+  
+  "learning_profile": {
+    "pace": "likely-fast",
+    "learns_by": "doing",
+    "notes": "Professional editor - will have strong baseline"
+  },
+  
+  "strengths": [],
+  "weaknesses": [],
+  
+  "progress": {
+    "current_day": 0,
+    "current_stage": 0,
+    "status": "active",
+    "accuracy_trend": "not-started"
+  },
+  
+  "interactions": {
+    "total_emails_sent": 1,
+    "total_replies_received": 0,
+    "questions_asked": [],
+    "nudges_sent": 0
+  },
+  
+  "support_strategy": {
+    "encouragement_level": "standard",
+    "feedback_style": "direct",
+    "notes": "Treat as regular student for authentic experience"
+  },
+  
+  "flags": {
+    "at_risk": false,
+    "incident_history": [],
+    "special_handling": "founder-testing"
+  },
+  
+  "outcome": {
+    "final_grade": null,
+    "certificate_issued": false,
+    "invited_to_pool": false
+  }
+}

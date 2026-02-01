@@ -1,0 +1,57 @@
+{
+  "id": "kishore-001",
+  "email": "kishore@aceternity.com",
+  "name": "Kishore",
+  
+  "background": {
+    "role": "unknown",
+    "reason_for_joining": "Referred by Meru",
+    "prior_experience": "unknown",
+    "timezone": "Asia/Kolkata",
+    "enrolled_at": "2026-02-01T11:22:00+05:30"
+  },
+  
+  "personality": {
+    "communication_style": "to-be-determined",
+    "notes": "New student. Will learn more from interactions."
+  },
+  
+  "learning_profile": {
+    "pace": "to-be-determined",
+    "learns_by": "to-be-determined"
+  },
+  
+  "strengths": [],
+  "weaknesses": [],
+  
+  "progress": {
+    "current_day": 0,
+    "current_stage": 0,
+    "status": "active",
+    "accuracy_trend": "not-started"
+  },
+  
+  "interactions": {
+    "total_emails_sent": 1,
+    "total_replies_received": 0,
+    "questions_asked": [],
+    "nudges_sent": 0
+  },
+  
+  "support_strategy": {
+    "encouragement_level": "medium",
+    "feedback_style": "professional",
+    "notes": "Standard onboarding"
+  },
+  
+  "flags": {
+    "at_risk": false,
+    "incident_history": []
+  },
+  
+  "outcome": {
+    "final_grade": null,
+    "certificate_issued": false,
+    "invited_to_pool": false
+  }
+}

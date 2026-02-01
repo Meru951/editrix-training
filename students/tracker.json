@@ -1,0 +1,70 @@
+{
+  "students": [
+    {
+      "id": "vidhi-001",
+      "email": "vidhi@editrix.ai",
+      "name": "Vidhi Gupta",
+      "timezone": "Asia/Kolkata",
+      "enrolled_at": "2026-02-01T11:05:00+05:30",
+      "current_day": 0,
+      "status": "active",
+      "last_email_sent": "2026-02-01T11:06:00.726271",
+      "last_email_type": "welcome",
+      "submissions": [],
+      "nudge_count": 0
+    },
+    {
+      "id": "adhya-001",
+      "email": "adhya@editrix.ai",
+      "name": "Adhya Preetam",
+      "timezone": "Asia/Kolkata",
+      "enrolled_at": "2026-02-01T11:05:00+05:30",
+      "current_day": 0,
+      "status": "active",
+      "last_email_sent": "2026-02-01T11:06:00.726271",
+      "last_email_type": "welcome",
+      "submissions": [],
+      "nudge_count": 0
+    },
+    {
+      "id": "meru-001",
+      "email": "meru@editrix.ai",
+      "name": "Meru",
+      "timezone": "Asia/Kolkata",
+      "enrolled_at": "2026-02-01T11:07:51.331170",
+      "current_day": 0,
+      "status": "active",
+      "last_email_sent": "2026-02-01T11:07:51.331170",
+      "last_email_type": "welcome",
+      "submissions": [],
+      "nudge_count": 0
+    },
+    {
+      "id": "kishore-001",
+      "email": "kishore@aceternity.com",
+      "name": "Kishore",
+      "timezone": "Asia/Kolkata",
+      "enrolled_at": "2026-02-01T11:23:07.354688",
+      "current_day": 0,
+      "status": "active",
+      "last_email_sent": "2026-02-01T11:23:07.354688",
+      "last_email_type": "welcome",
+      "submissions": [],
+      "nudge_count": 0
+    },
+    {
+      "id": "palak-001",
+      "email": "palak@editrix.ai",
+      "name": "Palak",
+      "timezone": "Asia/Kolkata",
+      "enrolled_at": "2026-02-01T11:23:32.810062",
+      "current_day": 0,
+      "status": "active",
+      "last_email_sent": "2026-02-01T11:23:32.810062",
+      "last_email_type": "welcome",
+      "submissions": [],
+      "nudge_count": 0
+    }
+  ],
+  "schema_version": 1
+}

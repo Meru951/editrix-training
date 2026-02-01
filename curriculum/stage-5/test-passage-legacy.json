@@ -1,0 +1,31 @@
+{
+  "stage": 5,
+  "title": "Final Assessment",
+  "type": "comprehensive-test",
+  "instructions": "This is the final assessment. You will proof a 10-page passage under timed conditions. You must demonstrate mastery of all skills: spelling, punctuation, dialogue, consistency, queries, and speed. Time limit: 25 minutes. Pass threshold: 90% accuracy, complete style sheet, appropriate queries.",
+  "passage": "FINAL ASSESSMENT PASSAGE\n\nCHAPTER ONE\n\nThe morning of the 4th July 1923 broke hot and cloudless over Whitmore House. Eleanor Ashworth—Miss Ashworth to the staff—stood at her bedroom window and watched the gardeners prepare the lawns for that evenings party.\n\n'It will be a dreadful crush,' she said to no-one in particular. 'Two hundred guests in this heat.'\n\nBehind her, Mary the housemaid was laying out dresses on the bed. 'Will you wear the blue, Miss, or the cream?'\n\nEleanor considered. The blue silk had been a gift from her father. The cream was newer, bought in Paris last spring. Both were beautiful. Both were impractical.\n\n'The cream I think. It's cooler.'\n\nShe turned back to the window. Below, a motor car was approaching up the drive. A grey Bentley—no, silver. The color was hard to judge in the bright light.\n\n'Who's arriving so early?' She frowned. 'The guests aren't expected until seven o'clock.'\n\nCHAPTER TWO\n\nThe silver Bentley belonged to Dr. Thomas Blackwood, an old friend of her fathers.\n\nEleanor had known Thomas since childhood. He had been a fixture at Whitmore House in those days, always visiting, always bringing sweets for the children. Now he was a distinguished physician with a practice in Harley street.\n\n'Eleanor!' He embraced her warmly in the entrance hall. 'You look wonderful. How long has it been—three years? Four?'\n\n'Nearly five.' She smiled. 'You missed father's funeral.'\n\nHis face fell. 'I know. I was in India. The telegram arrived too late.'\n\nThey walked through to the drawing room. The furniture had been moved to create space for dancing. The french windows stood open to catch any breeze.\n\n'I wanted to arrive early,' Thomas said, 'because I have news. Important news.'\n\n'Oh?' Eleanor sat down. 'Good news or bad?'\n\n'That depends entirely on your perspective.'\n\nCHAPTER THREE\n\nThe news concerned her brother, William.\n\nWilliam had left England five years ago, after the scandal. He had gone first to America, then to Argentina, then—according to his last letter—to somewhere in the Phillipines.\n\n'I saw him,' Thomas said. 'In Manila. Three months ago.'\n\nEleanor felt her heart quicken. 'How is he? Is he well?'\n\n'He's alive. He's healthy. But Eleanor...' Thomas paused. 'He's not the man you remember.'\n\n'What do you mean?'\n\n'He's changed. The climate, the isolation—they've taken their toll. He asked me to give you this.'\n\nThomas handed her a letter. It was addressed in Williams handwriting—she would have recognised it anywhere—but the hand seemed shaky, uncertain.\n\n'Read it later,' Thomas advised. 'When you're alone.'\n\nCHAPTER FOUR\n\nThe party began at seven o'clock precisely.\n\nGuests arrived in a steady stream—the Harringtons from the neighbouring estate, the Reverend Phelps and his wife, Lady Ashworth (no relation) from London, and dozens of others whose names Eleanor could barely remember.\n\nShe played the hostess, smiling and greeting, while Thomas's words echoed in her mind. William. Changed. Not the man you remember.\n\nThe band struck up a waltz. Couples took to the floor.\n\n'May I have this dance?' A voice at her elbow. She turned to find a man she didn't recognise—tall, dark haired, with an accent she couldn't place.\n\n'I'm sorry,' she said. 'Have we met?'\n\n'Not yet.' He smiled. 'I'm Edward Grey. A friend of your brother's.'\n\nEleanor's blood ran cold. 'Which brother?'\n\n'Why, William, of course. We met in Manilla. He spoke of you often.'\n\nThe word 'Manilla' hung in the air. Earlier it had been 'Manila.' One of them was wrong.",
+  "errors": [
+    {"type": "date format", "text": "4th July", "note": "Style: 4 July or July 4?"},
+    {"type": "apostrophe", "text": "evenings party", "correction": "evening's party"},
+    {"type": "hyphenation", "text": "no-one", "note": "Style: no one or no-one?"},
+    {"type": "dialogue punctuation", "text": "'The cream I think.", "correction": "'The cream, I think.'"},
+    {"type": "spelling (US/UK)", "text": "color", "correction": "colour (if British)"},
+    {"type": "possessive", "text": "fathers", "correction": "father's"},
+    {"type": "capitalisation", "text": "Harley street", "correction": "Harley Street"},
+    {"type": "capitalisation", "text": "french windows", "correction": "French windows"},
+    {"type": "spelling", "text": "Phillipines", "correction": "Philippines"},
+    {"type": "possessive", "text": "Williams handwriting", "correction": "William's handwriting"},
+    {"type": "hyphenation", "text": "dark haired", "correction": "dark-haired"},
+    {"type": "consistency", "text": "Manila / Manilla", "correction": "Choose one spelling"},
+    {"type": "dialogue", "text": "'Which brother?'", "note": "Query: Eleanor has only one brother mentioned?"},
+    {"type": "punctuation", "text": "'Why, William, of course.", "note": "Period inside quote in British style"}
+  ],
+  "style_sheet_required": true,
+  "queries_required": true,
+  "time_limit_minutes": 25,
+  "passing_criteria": {
+    "accuracy": 0.90,
+    "style_sheet": "complete",
+    "queries": "minimum 2"
+  }
+}
