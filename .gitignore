@@ -1,0 +1,24 @@
+# Credentials
+.credentials/
+
+# Logs
+logs/
+
+# Student data
+students/
+
+# Memory (personal)
+memory/
+
+# Demo videos (large files)
+demo-video/
+
+# OS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+venv/
+.venv/
+node_modules/

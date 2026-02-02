@@ -1,0 +1,77 @@
+{
+  "stage": 1,
+  "test": "Stage 1 Gate Test",
+  "title": "Spelling & Typos Assessment",
+  "time_limit_minutes": 15,
+  "pass_threshold": 0.90,
+  "max_false_positives": 2,
+  "total_errors": 20,
+  "passage": {
+    "title": "The Letter",
+    "text": [
+      "Eleanor recieved the letter on a cold Wenesday morning in November. She had been waiting for news from her brother for nearly three months, and the sight of his familar handwriting on the envolope made her heart race. She tore it open immediatly, not bothering to find a letter opener.",
+      "",
+      "The nieghbours had told her not to worry. Charles was an experianced traveller, they said, and knew how to look after himself. But Eleanor could not shake the feeling that somthing was wrong. There letters had always been regular before—every fortnight without fail—and this silence was unlike him.",
+      "",
+      "She sat down in the armchair by the window, the weak November light barely enough to read by. The letter was shorter than usual, which dissapointed her. Charles had always written at length about his adventures, describing the landscapes and the people he met with his characteristic humour.",
+      "",
+      "The first paragraph was about the whether, which seemed odd. Charles never wrote about such mundane things. He described a storm that had delayed his journey by several days and made it imposible to send letters. Eleanor felt some releif at this explanation, though it did not entirely satisfy her.",
+      "",
+      "The second paragraph made her pause. Charles wrote that he had met a woman—a French governess named Marguerite, or perhaps Margeurite, as he seemed to spell it both ways. He discribed her as intelligent and kind, with a sharp wit that reminded him of there mother.",
+      "",
+      "Eleanor reread this section carefuly. Her brother had never mentioned a woman before, not in all his years of travelling. She wondered wether this was significant. The way he wrote about Marguerite suggested something more than casual aquaintance.",
+      "",
+      "The final paragraph was the strangest of all. Charles wrote that he might not return to England as planned. He was considering staying on, perhaps permanantly. He asked Eleanor to break the news to their father gently, knowing how the old man would react. 'Do not be disapointed in me,' he wrote. 'I have finally found where I belong.'",
+      "",
+      "Eleanor set the letter down and stared out at the grey November sky. She did not know weather to feel happy for her brother or worried about what this would mean for the family. Everthing was about to change, and she was not sure she was ready for it."
+    ],
+    "errors": [
+      {"paragraph": 1, "error": "recieved", "correction": "received", "type": "transposition", "position": 2},
+      {"paragraph": 1, "error": "Wenesday", "correction": "Wednesday", "type": "omission", "position": 8},
+      {"paragraph": 1, "error": "familar", "correction": "familiar", "type": "omission", "position": 27},
+      {"paragraph": 1, "error": "envolope", "correction": "envelope", "type": "transposition", "position": 31},
+      {"paragraph": 1, "error": "immediatly", "correction": "immediately", "type": "omission", "position": 38},
+      {"paragraph": 3, "error": "nieghbours", "correction": "neighbours", "type": "transposition", "position": 2},
+      {"paragraph": 3, "error": "experianced", "correction": "experienced", "type": "wrong_letter", "position": 10},
+      {"paragraph": 3, "error": "somthing", "correction": "something", "type": "omission", "position": 30},
+      {"paragraph": 3, "error": "There letters", "correction": "Their letters", "type": "homophone", "position": 34},
+      {"paragraph": 5, "error": "dissapointed", "correction": "disappointed", "type": "wrong_doubling", "position": 16},
+      {"paragraph": 7, "error": "whether", "correction": "weather", "type": "homophone", "position": 8},
+      {"paragraph": 7, "error": "imposible", "correction": "impossible", "type": "omission", "position": 25},
+      {"paragraph": 7, "error": "releif", "correction": "relief", "type": "transposition", "position": 33},
+      {"paragraph": 9, "error": "Margeurite", "correction": "Marguerite", "type": "transposition", "position": 22},
+      {"paragraph": 9, "error": "discribed", "correction": "described", "type": "wrong_letter", "position": 30},
+      {"paragraph": 9, "error": "there mother", "correction": "their mother", "type": "homophone", "position": 45},
+      {"paragraph": 11, "error": "carefuly", "correction": "carefully", "type": "omission", "position": 6},
+      {"paragraph": 11, "error": "wether", "correction": "whether", "type": "omission", "position": 20},
+      {"paragraph": 11, "error": "aquaintance", "correction": "acquaintance", "type": "omission", "position": 38},
+      {"paragraph": 13, "error": "permanantly", "correction": "permanently", "type": "wrong_letter", "position": 15},
+      {"paragraph": 13, "error": "disapointed", "correction": "disappointed", "type": "omission", "position": 35},
+      {"paragraph": 15, "error": "weather", "correction": "whether", "type": "homophone", "position": 14},
+      {"paragraph": 15, "error": "Everthing", "correction": "Everything", "type": "omission", "position": 24}
+    ],
+    "note": "Total seeded errors: 23. Pass requires 90% (18+ caught with max 2 false positives). Slight over-seeding allows for grading flexibility."
+  },
+  "alternate_passages": [
+    {
+      "id": "1B",
+      "title": "The Journey",
+      "note": "Alternative passage for retakes - to be created"
+    },
+    {
+      "id": "1C", 
+      "title": "The House on the Hill",
+      "note": "Alternative passage for retakes - to be created"
+    }
+  ],
+  "grading": {
+    "formula": "(correct_catches - false_positives) / total_errors",
+    "pass": ">= 0.90",
+    "false_positive_cap": 2,
+    "feedback": {
+      "pass": "Well done. You've demonstrated competence in spotting spelling and typo errors. Proceed to Stage 2: Punctuation.",
+      "fail_accuracy": "You caught fewer than 90% of errors. Review the errors you missed, then try again with a new passage.",
+      "fail_false_positives": "You marked correct text as incorrect more than twice. Remember: only mark definite errors. If you're unsure, don't mark it."
+    }
+  }
+}

@@ -1,0 +1,482 @@
+{
+  "stage": 1,
+  "title": "Spelling & Typos",
+  "exercises": [
+    {
+      "id": "1.1",
+      "title": "Spot the Typo",
+      "type": "single-error",
+      "instructions": "Each sentence contains exactly one spelling or typo error. Find and correct it.",
+      "items": [
+        {
+          "id": 1,
+          "text": "She walked teh dog every morning without fail.",
+          "error": "teh",
+          "correction": "the",
+          "explanation": "Transposition: 'teh' is a common typo for 'the'."
+        },
+        {
+          "id": 2,
+          "text": "It occured to him that she might not come.",
+          "error": "occured",
+          "correction": "occurred",
+          "explanation": "Missing letter: 'occurred' has two c's and two r's."
+        },
+        {
+          "id": 3,
+          "text": "He found her behavour rather strange.",
+          "error": "behavour",
+          "correction": "behaviour",
+          "explanation": "Missing letter: 'behaviour' (British spelling with -our and the i)."
+        },
+        {
+          "id": 4,
+          "text": "The nieghbour complained about the noise.",
+          "error": "nieghbour",
+          "correction": "neighbour",
+          "explanation": "Transposition: 'ie' should be 'ei' in 'neighbour'. Remember: i before e except after c."
+        },
+        {
+          "id": 5,
+          "text": "She recieved the letter on Tuesday morning.",
+          "error": "recieved",
+          "correction": "received",
+          "explanation": "Transposition: 'ie' should be 'ei' after 'c' in 'received'."
+        },
+        {
+          "id": 6,
+          "text": "The meeting has been arrangd for next week.",
+          "error": "arrangd",
+          "correction": "arranged",
+          "explanation": "Omission: missing 'e' in 'arranged'."
+        },
+        {
+          "id": 7,
+          "text": "He was begining to lose patience.",
+          "error": "begining",
+          "correction": "beginning",
+          "explanation": "Omission: 'beginning' has double 'n'."
+        },
+        {
+          "id": 8,
+          "text": "The goverment announced new policies.",
+          "error": "goverment",
+          "correction": "government",
+          "explanation": "Omission: 'government' has an 'n' in the middle."
+        },
+        {
+          "id": 9,
+          "text": "She could not beleive what she was hearing.",
+          "error": "beleive",
+          "correction": "believe",
+          "explanation": "Transposition: 'ie' not 'ei' in 'believe' (no c before it)."
+        },
+        {
+          "id": 10,
+          "text": "The accomodation was excellent.",
+          "error": "accomodation",
+          "correction": "accommodation",
+          "explanation": "Omission: 'accommodation' has double 'c' and double 'm'."
+        },
+        {
+          "id": 11,
+          "text": "He made a definite decison about the matter.",
+          "error": "decison",
+          "correction": "decision",
+          "explanation": "Transposition: 'io' not 'on' in 'decision'."
+        },
+        {
+          "id": 12,
+          "text": "The seperate rooms were both available.",
+          "error": "seperate",
+          "correction": "separate",
+          "explanation": "Wrong letter: 'separate' has 'a' not 'e' in the middle. Think: 'there's A RAT in sepARATe'."
+        },
+        {
+          "id": 13,
+          "text": "She found his arguement unconvincing.",
+          "error": "arguement",
+          "correction": "argument",
+          "explanation": "Addition: 'argument' drops the 'e' from 'argue'."
+        },
+        {
+          "id": 14,
+          "text": "The weather was particulary cold that day.",
+          "error": "particulary",
+          "correction": "particularly",
+          "explanation": "Omission: 'particularly' has 'lar' not 'lar' — missing 'l'."
+        },
+        {
+          "id": 15,
+          "text": "He immediatly understood the problem.",
+          "error": "immediatly",
+          "correction": "immediately",
+          "explanation": "Omission: 'immediately' ends in '-ately' not '-atly'."
+        },
+        {
+          "id": 16,
+          "text": "The committee made its recomendation.",
+          "error": "recomendation",
+          "correction": "recommendation",
+          "explanation": "Omission: 'recommendation' has double 'm'."
+        },
+        {
+          "id": 17,
+          "text": "She was dissapointed by the result.",
+          "error": "dissapointed",
+          "correction": "disappointed",
+          "explanation": "Wrong doubling: 'disappointed' has one 's' and double 'p'."
+        },
+        {
+          "id": 18,
+          "text": "The occassion called for celebration.",
+          "error": "occassion",
+          "correction": "occasion",
+          "explanation": "Wrong doubling: 'occasion' has double 'c' but single 's'."
+        },
+        {
+          "id": 19,
+          "text": "He felt embarassed by the mistake.",
+          "error": "embarassed",
+          "correction": "embarrassed",
+          "explanation": "Omission: 'embarrassed' has double 'r' and double 's'."
+        },
+        {
+          "id": 20,
+          "text": "The professor was knowlegeable about the topic.",
+          "error": "knowlegeable",
+          "correction": "knowledgeable",
+          "explanation": "Omission: 'knowledgeable' keeps the 'e' before '-able' and has 'd' before 'g'."
+        }
+      ]
+    },
+    {
+      "id": "1.2",
+      "title": "British vs American",
+      "type": "identify-correct",
+      "instructions": "Each sentence contains an American spelling that should be British. Identify and correct it.",
+      "items": [
+        {
+          "id": 1,
+          "text": "The color of the walls was a pale blue.",
+          "error": "color",
+          "correction": "colour",
+          "rule": "-our spelling"
+        },
+        {
+          "id": 2,
+          "text": "She went to the theater with her friends.",
+          "error": "theater",
+          "correction": "theatre",
+          "rule": "-re spelling"
+        },
+        {
+          "id": 3,
+          "text": "The organization held its annual meeting.",
+          "error": "organization",
+          "correction": "organisation",
+          "rule": "-ise spelling (if house style uses -ise)"
+        },
+        {
+          "id": 4,
+          "text": "He asked for her driver's license.",
+          "error": "license",
+          "correction": "licence",
+          "rule": "Noun takes -ce in British English"
+        },
+        {
+          "id": 5,
+          "text": "The harbor was full of fishing boats.",
+          "error": "harbor",
+          "correction": "harbour",
+          "rule": "-our spelling"
+        },
+        {
+          "id": 6,
+          "text": "She practiced the piano every evening.",
+          "error": "practiced",
+          "correction": "practised",
+          "rule": "Verb takes -se in British English"
+        },
+        {
+          "id": 7,
+          "text": "The center of town was busy.",
+          "error": "center",
+          "correction": "centre",
+          "rule": "-re spelling"
+        },
+        {
+          "id": 8,
+          "text": "His behavior was unacceptable.",
+          "error": "behavior",
+          "correction": "behaviour",
+          "rule": "-our spelling"
+        },
+        {
+          "id": 9,
+          "text": "The defense lawyer made her argument.",
+          "error": "defense",
+          "correction": "defence",
+          "rule": "-ce spelling for noun"
+        },
+        {
+          "id": 10,
+          "text": "She got her driver's license renewed.",
+          "error": "license",
+          "correction": "licence",
+          "rule": "Noun takes -ce in British English"
+        },
+        {
+          "id": 11,
+          "text": "They traveled to the coast for the weekend.",
+          "error": "traveled",
+          "correction": "travelled",
+          "rule": "Double 'l' before -ed in British English"
+        },
+        {
+          "id": 12,
+          "text": "The movie was canceled due to rain.",
+          "error": "canceled",
+          "correction": "cancelled",
+          "rule": "Double 'l' before -ed in British English"
+        },
+        {
+          "id": 13,
+          "text": "She favored the second option.",
+          "error": "favored",
+          "correction": "favoured",
+          "rule": "-our spelling"
+        },
+        {
+          "id": 14,
+          "text": "The jewelry was kept in a safe.",
+          "error": "jewelry",
+          "correction": "jewellery",
+          "rule": "British spelling has extra 'le'"
+        },
+        {
+          "id": 15,
+          "text": "He analyzed the data carefully.",
+          "error": "analyzed",
+          "correction": "analysed",
+          "rule": "-yse spelling in British English"
+        }
+      ]
+    },
+    {
+      "id": "1.3",
+      "title": "Homophone Traps",
+      "type": "homophone-correction",
+      "instructions": "Each sentence contains a homophone error. Find the wrong word and replace it with the correct one.",
+      "items": [
+        {
+          "id": 1,
+          "text": "The dog wagged it's tail happily.",
+          "error": "it's",
+          "correction": "its",
+          "explanation": "'Its' (possessive) not 'it's' (it is)."
+        },
+        {
+          "id": 2,
+          "text": "Their going to the party tonight.",
+          "error": "Their",
+          "correction": "They're",
+          "explanation": "'They're' (they are) not 'their' (possessive)."
+        },
+        {
+          "id": 3,
+          "text": "She lead the group through the forest.",
+          "error": "lead",
+          "correction": "led",
+          "explanation": "'Led' is the past tense of 'lead'. 'Lead' (rhyming with 'bed') is the metal."
+        },
+        {
+          "id": 4,
+          "text": "The whether forecast predicted rain.",
+          "error": "whether",
+          "correction": "weather",
+          "explanation": "'Weather' is climate. 'Whether' introduces alternatives."
+        },
+        {
+          "id": 5,
+          "text": "Your the best person for the job.",
+          "error": "Your",
+          "correction": "You're",
+          "explanation": "'You're' (you are) not 'your' (possessive)."
+        },
+        {
+          "id": 6,
+          "text": "The affect of the medicine was immediate.",
+          "error": "affect",
+          "correction": "effect",
+          "explanation": "'Effect' (noun) not 'affect' (verb)."
+        },
+        {
+          "id": 7,
+          "text": "He couldn't bare the thought of leaving.",
+          "error": "bare",
+          "correction": "bear",
+          "explanation": "'Bear' means to tolerate. 'Bare' means naked or empty."
+        },
+        {
+          "id": 8,
+          "text": "She new exactly what to do.",
+          "error": "new",
+          "correction": "knew",
+          "explanation": "'Knew' is past tense of 'know'. 'New' means not old."
+        },
+        {
+          "id": 9,
+          "text": "The principle of the school gave a speech.",
+          "error": "principle",
+          "correction": "principal",
+          "explanation": "'Principal' is the head. 'Principle' is a rule or belief."
+        },
+        {
+          "id": 10,
+          "text": "Please be quite during the performance.",
+          "error": "quite",
+          "correction": "quiet",
+          "explanation": "'Quiet' means silent. 'Quite' means fairly or completely."
+        },
+        {
+          "id": 11,
+          "text": "The board was stationery in the water.",
+          "error": "stationery",
+          "correction": "stationary",
+          "explanation": "'Stationary' means not moving. 'Stationery' is writing materials."
+        },
+        {
+          "id": 12,
+          "text": "She gave me some good advise.",
+          "error": "advise",
+          "correction": "advice",
+          "explanation": "'Advice' (noun) not 'advise' (verb)."
+        },
+        {
+          "id": 13,
+          "text": "Who's book is this on the table?",
+          "error": "Who's",
+          "correction": "Whose",
+          "explanation": "'Whose' (possessive) not 'who's' (who is)."
+        },
+        {
+          "id": 14,
+          "text": "They walked passed the old church.",
+          "error": "passed",
+          "correction": "past",
+          "explanation": "'Past' as a preposition. 'Passed' is the verb (they passed the church)."
+        },
+        {
+          "id": 15,
+          "text": "The break pads needed replacing.",
+          "error": "break",
+          "correction": "brake",
+          "explanation": "'Brake' for vehicle stopping. 'Break' means to damage."
+        }
+      ]
+    },
+    {
+      "id": "1.4",
+      "title": "Mini-Paragraph Practice",
+      "type": "passage-proof",
+      "instructions": "Each short paragraph contains 2-3 errors. This is your bridge from single sentences to longer passages. Find all the errors.",
+      "items": [
+        {
+          "id": 1,
+          "text": "She walked to the libary after school. The building was quite old but well maintaned.",
+          "errors": [
+            {"error": "libary", "correction": "library", "position": "word 5"},
+            {"error": "maintaned", "correction": "maintained", "position": "word 14"}
+          ],
+          "total_errors": 2
+        },
+        {
+          "id": 2,
+          "text": "The wether had been unpredictable all week. Monday was sunny, but Teusday brought heavy rain.",
+          "errors": [
+            {"error": "wether", "correction": "weather", "position": "word 2"},
+            {"error": "Teusday", "correction": "Tuesday", "position": "word 12"}
+          ],
+          "total_errors": 2
+        },
+        {
+          "id": 3,
+          "text": "He could'nt beleive his luck. The job offer had arrived just when he needed it most.",
+          "errors": [
+            {"error": "could'nt", "correction": "couldn't", "position": "word 2"},
+            {"error": "beleive", "correction": "believe", "position": "word 3"}
+          ],
+          "total_errors": 2
+        },
+        {
+          "id": 4,
+          "text": "The childrens toys were scattered accross the floor. Their mother sighed and began tidying up.",
+          "errors": [
+            {"error": "childrens", "correction": "children's", "position": "word 2"},
+            {"error": "accross", "correction": "across", "position": "word 5"},
+            {"error": "Their", "correction": "Their", "note": "Correct - not an error"}
+          ],
+          "total_errors": 2
+        },
+        {
+          "id": 5,
+          "text": "She had always prefered tea to coffee. Her freind, however, drank three cups of coffee every morning.",
+          "errors": [
+            {"error": "prefered", "correction": "preferred", "position": "word 4"},
+            {"error": "freind", "correction": "friend", "position": "word 9"}
+          ],
+          "total_errors": 2
+        }
+      ]
+    },
+    {
+      "id": "1.5",
+      "title": "Full Paragraph Proof",
+      "type": "passage-proof",
+      "instructions": "Now for the real challenge. Each paragraph contains 6-7 errors. Take your time and find them all.",
+      "items": [
+        {
+          "id": 1,
+          "text": "The nieghbourhood had changed considerbly over the years. Where once their had been open fields, now stood rows of identcal houses. Margaret remebered playing in those fields as a child, chasing butterfies through the long grass. It seemed like a diffrent world now.",
+          "errors": [
+            {"error": "nieghbourhood", "correction": "neighbourhood", "position": "word 2"},
+            {"error": "considerbly", "correction": "considerably", "position": "word 5"},
+            {"error": "their", "correction": "there", "position": "word 10"},
+            {"error": "identcal", "correction": "identical", "position": "word 18"},
+            {"error": "remebered", "correction": "remembered", "position": "word 21"},
+            {"error": "butterfies", "correction": "butterflies", "position": "word 29"},
+            {"error": "diffrent", "correction": "different", "position": "word 38"}
+          ],
+          "total_errors": 7
+        },
+        {
+          "id": 2,
+          "text": "James recieved the letter on a grey Wenesday morning. He had been waiting for it for weeks, and now that it had finaly arrived, he was allmost afraid to open it. His hands were trembling as he tore the envolope. The news inside would change everthing.",
+          "errors": [
+            {"error": "recieved", "correction": "received", "position": "word 2"},
+            {"error": "Wenesday", "correction": "Wednesday", "position": "word 8"},
+            {"error": "finaly", "correction": "finally", "position": "word 19"},
+            {"error": "allmost", "correction": "almost", "position": "word 23"},
+            {"error": "envolope", "correction": "envelope", "position": "word 33"},
+            {"error": "everthing", "correction": "everything", "position": "word 38"}
+          ],
+          "total_errors": 6
+        },
+        {
+          "id": 3,
+          "text": "The restuarant was busier than usual that evening. Dr Patterson had recomended it to her, but now she was begining to regret the choice. The noise made it imposible to hear herself think. She orderd a glass of wine and waited for her freind to arrive.",
+          "errors": [
+            {"error": "restuarant", "correction": "restaurant", "position": "word 2"},
+            {"error": "recomended", "correction": "recommended", "position": "word 10"},
+            {"error": "begining", "correction": "beginning", "position": "word 17"},
+            {"error": "imposible", "correction": "impossible", "position": "word 25"},
+            {"error": "orderd", "correction": "ordered", "position": "word 31"},
+            {"error": "freind", "correction": "friend", "position": "word 40"}
+          ],
+          "total_errors": 6
+        }
+      ]
+    }
+  ]
+}
