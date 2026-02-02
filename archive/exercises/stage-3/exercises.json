@@ -1,0 +1,412 @@
+{
+  "stage": 3,
+  "title": "Consistency & Style Sheets",
+  "exercises": [
+    {
+      "id": "3.1",
+      "title": "Find the Inconsistencies",
+      "type": "consistency-check",
+      "instructions": "This passage contains 10 inconsistencies — words or names spelled differently at different points. Find all variant spellings and identify which should be corrected for consistency.",
+      "passage": {
+        "title": "The Manor House",
+        "paragraphs": [
+          "Catherine arrived at Thornwood Manor just as the sun was setting. She had travelled all day from London, and the journey had left her exhausted. The old house loomed before her, its grey stone walls catching the last of the evening light.",
+          "",
+          "Mrs Holloway, the housekeeper, met her at the door. 'Miss Katherine, we've been expecting you,' she said, leading Catherine into the entrance hall. 'Your room is ready. The grey bedroom, overlooking the garden.'",
+          "",
+          "The entrance hall was impressive—all dark wood and oil paintings of stern-faced ancestors. Catherine noticed a portrait of a woman in a blue dress. 'Who is that?' she asked.",
+          "",
+          "'That is Lady Thornwood, your great-grandmother,' said Mrs. Holloway. 'She built the orangery in eighteen ninety-two. Quite the gardener, she was.'",
+          "",
+          "Katherine followed the housekeeper up the main staircase. The stairs creaked under her feet, and she could smell lavender—or was it lavendar? Someone had placed fresh flowers on the landing.",
+          "",
+          "Her room was at the end of a long corridor. The gray walls were hung with faded tapestries, and a four-poster bed dominated the space. Through the window, she could see the orangery Mrs Holloway had mentioned, its glass panels glinting in the twilight.",
+          "",
+          "Catharine unpacked quickly, eager to explore before dinner. She had heard stories about Thornwood manor from her mother—tales of secret passages and hidden rooms. The house felt full of secrets.",
+          "",
+          "'Dinner is at eight o'clock,' Mrs Holloway had said. Or was it eight-o'clock? Catherine couldn't remember. She checked her watch: seven thirty. Plenty of time.",
+          "",
+          "She made her way downstairs and through the drawing room into the garden. The drawing-room had been magnificent, all velvet and gilt, but the garden was something else entirely. Roses climbed the walls, and a path led down to what the house-keeper had called the orangery.",
+          "",
+          "The glass structure stood at the far end of the garden, surrounded by overgrown hedges. Lady Thornwood had built it in 1892, according to Mrs Holloway. Inside, Catherine could see the shapes of exotic plants, their leaves pressing against the fogged glass.",
+          "",
+          "She would explore it tomorrow, Catharine decided. For now, she needed to rest."
+        ]
+      },
+      "inconsistencies": [
+        {
+          "id": 1,
+          "variants": ["Catherine", "Katherine", "Catharine"],
+          "occurrences": {
+            "Catherine": ["para 1", "para 3", "para 8", "para 10"],
+            "Katherine": ["para 2", "para 5"],
+            "Catharine": ["para 7", "para 12"]
+          },
+          "first_instance": "Catherine",
+          "correction": "All should be 'Catherine'"
+        },
+        {
+          "id": 2,
+          "variants": ["grey", "gray"],
+          "occurrences": {
+            "grey": ["para 1", "para 2"],
+            "gray": ["para 6"]
+          },
+          "first_instance": "grey",
+          "correction": "All should be 'grey' (British spelling)"
+        },
+        {
+          "id": 3,
+          "variants": ["Mrs Holloway", "Mrs. Holloway"],
+          "occurrences": {
+            "Mrs Holloway": ["para 2", "para 6", "para 10"],
+            "Mrs. Holloway": ["para 4"]
+          },
+          "first_instance": "Mrs Holloway",
+          "correction": "All should be 'Mrs Holloway' (British: no full stop in contractions)"
+        },
+        {
+          "id": 4,
+          "variants": ["lavender", "lavendar"],
+          "occurrences": {
+            "lavender": ["para 5 (correct spelling)"],
+            "lavendar": ["para 5 (incorrect variant mentioned)"]
+          },
+          "first_instance": "lavender",
+          "correction": "Standard spelling is 'lavender'",
+          "note": "This is presented as character uncertainty but would flag on a style sheet"
+        },
+        {
+          "id": 5,
+          "variants": ["Thornwood Manor", "Thornwood manor"],
+          "occurrences": {
+            "Thornwood Manor": ["para 1"],
+            "Thornwood manor": ["para 7"]
+          },
+          "first_instance": "Thornwood Manor",
+          "correction": "All should be 'Thornwood Manor' (proper noun, capital M)"
+        },
+        {
+          "id": 6,
+          "variants": ["eighteen ninety-two", "1892"],
+          "occurrences": {
+            "eighteen ninety-two": ["para 4"],
+            "1892": ["para 10"]
+          },
+          "first_instance": "eighteen ninety-two",
+          "correction": "Choose one style and be consistent throughout",
+          "note": "Either is acceptable, but must be consistent"
+        },
+        {
+          "id": 7,
+          "variants": ["eight o'clock", "eight-o'clock"],
+          "occurrences": {
+            "eight o'clock": ["para 8 (implied)"],
+            "eight-o'clock": ["para 8 (variant)"]
+          },
+          "first_instance": "eight o'clock",
+          "correction": "'eight o'clock' (no hyphen)",
+          "note": "Presented as character uncertainty"
+        },
+        {
+          "id": 8,
+          "variants": ["drawing room", "drawing-room"],
+          "occurrences": {
+            "drawing room": ["para 9"],
+            "drawing-room": ["para 9"]
+          },
+          "first_instance": "drawing room",
+          "correction": "Choose one and be consistent"
+        },
+        {
+          "id": 9,
+          "variants": ["housekeeper", "house-keeper"],
+          "occurrences": {
+            "housekeeper": ["para 2"],
+            "house-keeper": ["para 9"]
+          },
+          "first_instance": "housekeeper",
+          "correction": "All should be 'housekeeper' (modern, closed compound)"
+        },
+        {
+          "id": 10,
+          "variants": ["seven thirty", "implied time format"],
+          "occurrences": {
+            "seven thirty": ["para 8"]
+          },
+          "related_issue": "Time format should match 'eight o'clock' style",
+          "correction": "Consider 'seven-thirty' or 'half past seven' for consistency with 'eight o'clock'"
+        }
+      ],
+      "total_inconsistencies": 10
+    },
+    {
+      "id": "3.2",
+      "title": "Build a Style Sheet",
+      "type": "style-sheet-creation",
+      "instructions": "Read the following passage and create a complete style sheet as you go. Record all character names, place names, and any terms requiring consistent treatment.",
+      "passage": {
+        "title": "The Investigation",
+        "paragraphs": [
+          "Detective Inspector James McAllister arrived at Blackwood House at precisely nine o'clock. His sergeant, DS Patricia Okonkwo, was already there, speaking with the housekeeper.",
+          "",
+          "'Morning, Pat,' he said. 'What have we got?'",
+          "",
+          "'Victim is Dr Helena Blackwood, seventy-two years old. Owner of the house. The cleaner found her this morning in the library.' Sergeant Okonkwo consulted her notebook. 'Time of death estimated between ten p.m. and midnight.'",
+          "",
+          "McAllister looked up at the Georgian façade. Blackwood house was impressive—four storeys of honey-coloured stone, surrounded by formal gardens. The Blackwoods had lived here since the eighteenth century.",
+          "",
+          "'Any family?' he asked.",
+          "",
+          "'One son, Professor Edward Blackwood. Teaches medieval history at St Andrews. He's on his way down from Scotland now.' Okonkwo flipped a page. 'The victim's late husband was Sir Richard Blackwood. Died three years ago.'",
+          "",
+          "They entered the house through the main door. The entrance hall was dominated by a grand staircase and a crystal chandelier that caught the morning light.",
+          "",
+          "'The body's through here, guv,' said a uniformed constable, PC Williams. He led them through a drawing room into the library.",
+          "",
+          "Dr. Blackwood lay on the floor near the fireplace, surrounded by scattered books. She was wearing a grey cashmere cardigan and reading glasses hung from a chain around her neck.",
+          "",
+          "'Blunt force trauma,' said Dr Anand Patel, the pathologist. 'Single blow to the back of the head. Probably a heavy object—we haven't found the weapon yet.'",
+          "",
+          "DI McAllister crouched beside the body. 'Any sign of a struggle?'",
+          "",
+          "'Some defensive wounds on her hands. She tried to fight back.' Doctor Patel stood up. 'I'll know more after the post-mortem.'",
+          "",
+          "Patricia Okonkwo was examining the bookshelves. 'Guv, look at this. There's a gap here—something's been taken.'",
+          "",
+          "McAllister joined her. The missing item had left a clear rectangular outline in the dust. 'A book? A box?'",
+          "",
+          "'Box, I'd say. About thirty centimetres by twenty.' She photographed the gap. 'The cleaner might know what was kept here.'",
+          "",
+          "The cleaner was Mrs Dorothy Chen, a small woman in her sixties who had worked at Blackwood House for fifteen years. They found her in the kitchen, still shaking.",
+          "",
+          "'I come every Tuesday and Friday,' she told them. 'Nine o'clock, regular as clockwork. I let myself in with my key and—' Her voice broke. 'She was such a kind woman. Who would do this?'",
+          "",
+          "'Do you know what was kept in that gap on the library shelf?' DS Okonkwo asked gently.",
+          "",
+          "'The Blackwood Papers,' said Mrs Chen. 'Old family documents. Dr Blackwood was always going through them. Said she was writing a book about the family history.'"
+        ]
+      },
+      "expected_style_sheet": {
+        "characters": [
+          "Detective Inspector James McAllister (DI McAllister) — lead investigator",
+          "DS Patricia Okonkwo (Pat, Sergeant Okonkwo) — McAllister's sergeant",
+          "Dr Helena Blackwood — victim, 72, owner of Blackwood House",
+          "Professor Edward Blackwood — victim's son, medieval history, St Andrews",
+          "Sir Richard Blackwood — victim's late husband, died 3 years ago",
+          "PC Williams — uniformed constable",
+          "Dr Anand Patel (Doctor Patel) — pathologist",
+          "Mrs Dorothy Chen — cleaner, 60s, works Tues/Fri"
+        ],
+        "places": [
+          "Blackwood House (note: 'Blackwood house' in para 4 — inconsistency)",
+          "the library",
+          "the drawing room",
+          "the entrance hall",
+          "St Andrews (university)"
+        ],
+        "terms": [
+          "Georgian (capitalised)",
+          "grey (British spelling)",
+          "honey-coloured (hyphenated)",
+          "nine o'clock / ten p.m. / midnight (time style)",
+          "centimetres (British spelling)",
+          "post-mortem (hyphenated)",
+          "the Blackwood Papers"
+        ],
+        "titles_and_ranks": [
+          "Detective Inspector / DI",
+          "DS (Detective Sergeant)",
+          "PC (Police Constable)",
+          "Dr (no full stop — but note 'Dr.' in para 10)",
+          "Professor",
+          "Sir",
+          "Mrs"
+        ],
+        "inconsistencies_to_note": [
+          "'Blackwood House' vs 'Blackwood house' (para 4)",
+          "'Dr Blackwood' vs 'Dr. Blackwood' (para 10)",
+          "'Dr Anand Patel' vs 'Doctor Patel' (para 11 vs 13)"
+        ]
+      }
+    },
+    {
+      "id": "3.3",
+      "title": "Timeline Check",
+      "type": "timeline-errors",
+      "instructions": "This passage contains chronological errors and contradictions. Find all timeline inconsistencies.",
+      "passage": {
+        "title": "The Reunion",
+        "paragraphs": [
+          "Sarah hadn't seen her sister in five years. They had argued at their father's funeral in 2018, and neither had reached out since.",
+          "",
+          "Now, in spring 2022, she stood outside Emma's flat, a bottle of wine in her hand. It had been too long. Seven years of silence was enough.",
+          "",
+          "Emma opened the door. She looked older—grey streaks in her dark hair that hadn't been there at the funeral. But her eyes were the same.",
+          "",
+          "'Sarah.' Emma's voice was flat. 'What are you doing here?'",
+          "",
+          "'I thought it was time. It's been half a decade. We should talk.'",
+          "",
+          "They sat in Emma's kitchen. The flat was small but tidy, filled with books and photographs. Sarah noticed a picture of their mother, who had died when they were teenagers, nearly thirty years ago.",
+          "",
+          "'I was twenty-two when we lost Mum,' Emma said, following her gaze. 'You were nineteen. Do you remember the funeral? How Dad couldn't stop crying?'",
+          "",
+          "Sarah nodded. 'I remember.' She had been so young. They all had been.",
+          "",
+          "Emma poured the wine. 'Dad's been gone three years now. Sometimes I still pick up the phone to call him.'",
+          "",
+          "'Me too.' Sarah took a sip. 'I should have come sooner. After the funeral, I was just so angry—about the will, about the house—'",
+          "",
+          "'The house Dad left to me in 2019,' Emma interrupted. 'The house that caused all this.'",
+          "",
+          "'He left it to you because you'd looked after him. I know that now.' Sarah paused. 'I was living in Australia then. I couldn't have helped even if I'd wanted to. I moved back two years ago, in 2021.'",
+          "",
+          "Emma softened slightly. 'You look tired. Are you sleeping?'",
+          "",
+          "'Not well. The jet lag from the move still hasn't worn off, even after eighteen months.'",
+          "",
+          "They talked until dark. At nine o'clock, Sarah stood to leave. 'Same time next week?' she asked.",
+          "",
+          "'It's a date.' Emma smiled for the first time. 'It's good to see you, Sarah. I've missed you. These past six years have been lonely.'"
+        ]
+      },
+      "timeline_errors": [
+        {
+          "id": 1,
+          "error": "Time since argument",
+          "details": "'five years' in para 1, but 'seven years' in para 2",
+          "correct": "2018 to 2022 is 4 years, not 5 or 7"
+        },
+        {
+          "id": 2,
+          "error": "Father's death",
+          "details": "'Dad's been gone three years' in para 9, but funeral was 2018 and it's now 2022 (4 years)",
+          "correct": "Should be 'four years'"
+        },
+        {
+          "id": 3,
+          "error": "Will and house",
+          "details": "'Dad left to me in 2019' in para 11, but Dad died in 2018 at the funeral mentioned in para 1",
+          "correct": "The will would have been read after the 2018 funeral, not in 2019"
+        },
+        {
+          "id": 4,
+          "error": "Sarah's return to UK",
+          "details": "'moved back two years ago, in 2021' but it's 'spring 2022' (para 2)",
+          "correct": "Two years ago from spring 2022 would be spring 2020, not 2021"
+        },
+        {
+          "id": 5,
+          "error": "Jet lag duration",
+          "details": "'jet lag... even after eighteen months' — jet lag doesn't last 18 months",
+          "correct": "Likely meant to say 'adjustment' or the timeframe is wrong"
+        },
+        {
+          "id": 6,
+          "error": "Time of silence",
+          "details": "'half a decade' in para 5 = 5 years, but 2018-2022 = 4 years",
+          "correct": "Should be 'four years' or 'nearly five years'"
+        },
+        {
+          "id": 7,
+          "error": "Emma's final statement",
+          "details": "'these past six years' in para 17, but they argued 4 years ago",
+          "correct": "Should be 'four years'"
+        }
+      ],
+      "total_errors": 7
+    },
+    {
+      "id": "3.4",
+      "title": "Character Consistency",
+      "type": "character-errors",
+      "instructions": "This passage contains contradictions in character descriptions. Find all inconsistencies.",
+      "passage": {
+        "title": "The Witness",
+        "paragraphs": [
+          "Detective Marsh studied the witness across the table. Her name was Claire Donovan, according to the file. Twenty-eight years old, unmarried, worked as an accountant at a firm in the city centre.",
+          "",
+          "'Tell me again what you saw, Ms Donovan,' he said.",
+          "",
+          "The woman pushed her blonde hair behind her ear. 'I was walking home from work. It was about half past six—I always leave at six on Fridays. I cut through St James's Park, like I always do.'",
+          "",
+          "'And that's when you saw the victim?'",
+          "",
+          "Mrs Donovan nodded. 'She was lying near the bandstand. At first I thought she was sleeping—homeless people sometimes sleep there. But then I saw the blood.'",
+          "",
+          "Marsh made a note. Claire was clearly shaken, her green eyes red-rimmed from crying. She'd been at the station for three hours now.",
+          "",
+          "'You mentioned you saw someone leaving the scene. Can you describe them?'",
+          "",
+          "'A man. Tall—over six feet, I'd say. Wearing a dark jacket, maybe navy or black. He was walking fast, almost running. I couldn't see his face.'",
+          "",
+          "'Hair colour?'",
+          "",
+          "'Dark. Brown, I think. Or maybe black. It was hard to tell in the light.'",
+          "",
+          "Marsh nodded. 'And you're certain of the time? Half six?'",
+          "",
+          "'Yes. I'd checked my phone just before I entered the park. Quarter past six.' The young woman twisted her wedding ring nervously. 'I remember because I was running late to meet my husband for dinner.'",
+          "",
+          "'What does your husband do, Ms Donovan?'",
+          "",
+          "'He's a teacher. Maths, at the secondary school on Park Road.' She paused. 'We've been married two years. He's going to wonder where I am.'",
+          "",
+          "Marsh slid a photograph across the table. 'Do you recognise this man?'",
+          "",
+          "Ms Donovan, thirty-one, leaned forward to look. Her brown eyes narrowed. 'No. I've never seen him before. Should I have?'",
+          "",
+          "'He lives in your building. Fourth floor.'",
+          "",
+          "'I'm on the second floor. I don't really know my neighbours.' Claire sat back, running a hand through her red hair. 'Can I go now? I've told you everything I know.'"
+        ]
+      },
+      "character_errors": [
+        {
+          "id": 1,
+          "character": "Claire Donovan",
+          "error": "Marital status",
+          "details": "'unmarried' in para 1, but 'Mrs Donovan' in para 5, 'wedding ring' in para 13, 'husband' in para 13, 15",
+          "locations": ["para 1", "para 5", "para 13", "para 15"]
+        },
+        {
+          "id": 2,
+          "character": "Claire Donovan",
+          "error": "Age",
+          "details": "'Twenty-eight' in para 1, but 'thirty-one' in para 17",
+          "locations": ["para 1", "para 17"]
+        },
+        {
+          "id": 3,
+          "character": "Claire Donovan",
+          "error": "Eye colour",
+          "details": "'green eyes' in para 6, but 'brown eyes' in para 17",
+          "locations": ["para 6", "para 17"]
+        },
+        {
+          "id": 4,
+          "character": "Claire Donovan",
+          "error": "Hair colour",
+          "details": "'blonde hair' in para 3, but 'red hair' in para 19",
+          "locations": ["para 3", "para 19"]
+        },
+        {
+          "id": 5,
+          "character": "Claire Donovan",
+          "error": "Time she left work/entered park",
+          "details": "'half past six' and 'always leave at six' in para 3, but 'Quarter past six' when she entered park in para 13",
+          "locations": ["para 3", "para 13"]
+        },
+        {
+          "id": 6,
+          "character": "Claire Donovan",
+          "error": "Title inconsistency",
+          "details": "'Ms Donovan' in para 2 and 14, but 'Mrs Donovan' in para 5",
+          "locations": ["para 2", "para 5", "para 14"]
+        }
+      ],
+      "total_errors": 6
+    }
+  ]
+}

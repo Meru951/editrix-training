@@ -1,0 +1,490 @@
+{
+  "stage": 2,
+  "title": "Punctuation & Dialogue",
+  "exercises": [
+    {
+      "id": "2.1",
+      "title": "Comma Correction",
+      "type": "punctuation-fix",
+      "instructions": "Each sentence has a comma error (missing, extra, or misplaced). Find and correct it.",
+      "items": [
+        {
+          "id": 1,
+          "text": "She bought apples oranges and bananas.",
+          "error": "missing Oxford comma",
+          "correction": "She bought apples, oranges, and bananas.",
+          "explanation": "Oxford comma needed before 'and' in a list of three or more."
+        },
+        {
+          "id": 2,
+          "text": "The man who wore the red hat, left early.",
+          "error": "unnecessary comma",
+          "correction": "The man who wore the red hat left early.",
+          "explanation": "Restrictive clause — no comma. The clause identifies which man."
+        },
+        {
+          "id": 3,
+          "text": "I went to the shop, I bought some bread.",
+          "error": "comma splice",
+          "correction": "I went to the shop. I bought some bread.",
+          "explanation": "Two independent clauses need more than a comma. Use a full stop, semicolon, or conjunction."
+        },
+        {
+          "id": 4,
+          "text": "However the weather was fine.",
+          "error": "missing comma after introductory word",
+          "correction": "However, the weather was fine.",
+          "explanation": "Introductory adverbs like 'however' take a comma."
+        },
+        {
+          "id": 5,
+          "text": "My brother, who lives in London is a doctor.",
+          "error": "missing closing comma",
+          "correction": "My brother, who lives in London, is a doctor.",
+          "explanation": "Non-restrictive clause needs commas on both sides."
+        },
+        {
+          "id": 6,
+          "text": "She said that, she would come later.",
+          "error": "unnecessary comma",
+          "correction": "She said that she would come later.",
+          "explanation": "No comma between 'that' and the clause it introduces."
+        },
+        {
+          "id": 7,
+          "text": "The old, dusty, book lay on the table.",
+          "error": "unnecessary comma before noun",
+          "correction": "The old, dusty book lay on the table.",
+          "explanation": "No comma between the final adjective and the noun."
+        },
+        {
+          "id": 8,
+          "text": "After eating the dog went for a walk.",
+          "error": "missing comma after introductory phrase",
+          "correction": "After eating, the dog went for a walk.",
+          "explanation": "Comma after introductory phrase. Also prevents misreading ('eating the dog')."
+        },
+        {
+          "id": 9,
+          "text": "He was tired, but, he kept working.",
+          "error": "unnecessary comma after conjunction",
+          "correction": "He was tired, but he kept working.",
+          "explanation": "No comma after the conjunction 'but'."
+        },
+        {
+          "id": 10,
+          "text": "The book, that she recommended was excellent.",
+          "error": "unnecessary comma before restrictive clause",
+          "correction": "The book that she recommended was excellent.",
+          "explanation": "'That' introduces a restrictive clause — no comma."
+        },
+        {
+          "id": 11,
+          "text": "In the morning I always drink coffee.",
+          "error": "missing comma after introductory phrase",
+          "correction": "In the morning, I always drink coffee.",
+          "explanation": "Comma after introductory prepositional phrase."
+        },
+        {
+          "id": 12,
+          "text": "She is not only clever, but also kind.",
+          "error": "unnecessary comma in correlative conjunction",
+          "correction": "She is not only clever but also kind.",
+          "explanation": "No comma between 'not only... but also' when the elements are parallel."
+        },
+        {
+          "id": 13,
+          "text": "The children played outside the parents watched from the window.",
+          "error": "comma splice / missing punctuation",
+          "correction": "The children played outside; the parents watched from the window.",
+          "explanation": "Two independent clauses need a semicolon, full stop, or conjunction."
+        },
+        {
+          "id": 14,
+          "text": "Well I suppose you're right.",
+          "error": "missing comma after interjection",
+          "correction": "Well, I suppose you're right.",
+          "explanation": "Comma after introductory interjection."
+        },
+        {
+          "id": 15,
+          "text": "The restaurant, on the corner serves Italian food.",
+          "error": "missing closing comma or unnecessary opening comma",
+          "correction": "The restaurant on the corner serves Italian food.",
+          "explanation": "If restrictive (which restaurant?), no commas. If non-restrictive, needs both."
+        },
+        {
+          "id": 16,
+          "text": "She lives in Paris, France and works in finance.",
+          "error": "missing comma after country",
+          "correction": "She lives in Paris, France, and works in finance.",
+          "explanation": "Comma after the country (Paris, France,) and Oxford comma before 'and'."
+        },
+        {
+          "id": 17,
+          "text": "He asked, if she was coming to the party.",
+          "error": "unnecessary comma",
+          "correction": "He asked if she was coming to the party.",
+          "explanation": "No comma between verb and 'if' clause in indirect questions."
+        },
+        {
+          "id": 18,
+          "text": "The cat sat on the mat, and purred loudly.",
+          "error": "unnecessary comma before 'and' in compound predicate",
+          "correction": "The cat sat on the mat and purred loudly.",
+          "explanation": "No comma before 'and' when it joins two verbs with the same subject."
+        },
+        {
+          "id": 19,
+          "text": "Dear Mr Smith I am writing to enquire about the position.",
+          "error": "missing comma after salutation",
+          "correction": "Dear Mr Smith, I am writing to enquire about the position.",
+          "explanation": "Comma after the salutation in a letter."
+        },
+        {
+          "id": 20,
+          "text": "She was born on 15 June, 1985 in Manchester.",
+          "error": "inconsistent comma use with date",
+          "correction": "She was born on 15 June 1985 in Manchester.",
+          "explanation": "British style: no comma in dates (15 June 1985). If using American style with comma after year, need one after 1985 too."
+        },
+        {
+          "id": 21,
+          "text": "The car which was parked outside belongs to my neighbour.",
+          "error": "which without comma in restrictive clause",
+          "correction": "The car that was parked outside belongs to my neighbour.",
+          "explanation": "Restrictive clause (identifies which car) — use 'that' without comma, or add commas around 'which was parked outside'."
+        },
+        {
+          "id": 22,
+          "text": "The report which I finished yesterday is on your desk.",
+          "error": "which without comma in restrictive clause",
+          "correction": "The report that I finished yesterday is on your desk.",
+          "explanation": "Restrictive clause — use 'that' or add commas: 'The report, which I finished yesterday, is on your desk.'"
+        },
+        {
+          "id": 23,
+          "text": "She chose the dress, that was on sale.",
+          "error": "comma before restrictive 'that'",
+          "correction": "She chose the dress that was on sale.",
+          "explanation": "'That' introduces restrictive clauses — no comma before it."
+        },
+        {
+          "id": 24,
+          "text": "The house which has a red door is for sale.",
+          "error": "which without comma in restrictive clause",
+          "correction": "The house that has a red door is for sale.",
+          "explanation": "Restrictive clause (which house?) — use 'that' without comma."
+        },
+        {
+          "id": 25,
+          "text": "My car which is blue needs washing.",
+          "error": "missing commas around non-restrictive clause",
+          "correction": "My car, which is blue, needs washing.",
+          "explanation": "If you only have one car, this is non-restrictive (extra info) — needs commas around 'which is blue'."
+        }
+      ]
+    },
+    {
+      "id": "2.2",
+      "title": "Dash Decisions",
+      "type": "multiple-choice",
+      "instructions": "Choose the correct punctuation mark: hyphen (-), en-dash (–), or em-dash (—).",
+      "items": [
+        {
+          "id": 1,
+          "text": "See pages 14_25 for more details.",
+          "options": ["hyphen", "en-dash", "em-dash"],
+          "answer": "en-dash",
+          "explanation": "En-dash for number ranges."
+        },
+        {
+          "id": 2,
+          "text": "She was a well_known author.",
+          "options": ["hyphen", "en-dash", "em-dash"],
+          "answer": "hyphen",
+          "explanation": "Hyphen for compound adjectives before a noun."
+        },
+        {
+          "id": 3,
+          "text": "He wanted to explain_but she had already left.",
+          "options": ["hyphen", "en-dash", "em-dash"],
+          "answer": "em-dash",
+          "explanation": "Em-dash for interruption or abrupt break."
+        },
+        {
+          "id": 4,
+          "text": "The London_Paris train departs at noon.",
+          "options": ["hyphen", "en-dash", "em-dash"],
+          "answer": "en-dash",
+          "explanation": "En-dash for connection between equal elements."
+        },
+        {
+          "id": 5,
+          "text": "My sister_in_law is visiting next week.",
+          "options": ["hyphen", "en-dash", "em-dash"],
+          "answer": "hyphen",
+          "explanation": "Hyphens in compound nouns like sister-in-law."
+        },
+        {
+          "id": 6,
+          "text": "The years 1939_1945 were difficult.",
+          "options": ["hyphen", "en-dash", "em-dash"],
+          "answer": "en-dash",
+          "explanation": "En-dash for year ranges."
+        },
+        {
+          "id": 7,
+          "text": "The truth_and he knew this_was hard to accept.",
+          "options": ["hyphen", "en-dash", "em-dash"],
+          "answer": "em-dash",
+          "explanation": "Em-dashes for parenthetical aside with more emphasis than commas."
+        },
+        {
+          "id": 8,
+          "text": "She needed to re_examine the evidence.",
+          "options": ["hyphen", "en-dash", "em-dash"],
+          "answer": "hyphen",
+          "explanation": "Hyphen with prefix re- before a vowel (re-examine)."
+        },
+        {
+          "id": 9,
+          "text": "The meeting is scheduled for Monday_Friday.",
+          "options": ["hyphen", "en-dash", "em-dash"],
+          "answer": "en-dash",
+          "explanation": "En-dash for day ranges (meaning 'to')."
+        },
+        {
+          "id": 10,
+          "text": "Twenty_three people attended the event.",
+          "options": ["hyphen", "en-dash", "em-dash"],
+          "answer": "hyphen",
+          "explanation": "Hyphen in spelled-out compound numbers."
+        },
+        {
+          "id": 11,
+          "text": "'I was just about to_' She stopped mid_sentence.",
+          "options": ["hyphen", "en-dash", "em-dash"],
+          "answer": "em-dash",
+          "explanation": "Em-dash for interrupted speech."
+        },
+        {
+          "id": 12,
+          "text": "The post_war period brought many changes.",
+          "options": ["hyphen", "en-dash", "em-dash"],
+          "answer": "hyphen",
+          "explanation": "Hyphen with prefix post- in compound adjectives."
+        },
+        {
+          "id": 13,
+          "text": "He cited the Chomsky_Halle theory of phonology.",
+          "options": ["hyphen", "en-dash", "em-dash"],
+          "answer": "en-dash",
+          "explanation": "En-dash between names in joint attributions."
+        },
+        {
+          "id": 14,
+          "text": "The door opened and_to her surprise_there stood her brother.",
+          "options": ["hyphen", "en-dash", "em-dash"],
+          "answer": "em-dash",
+          "explanation": "Em-dashes for parenthetical phrase."
+        },
+        {
+          "id": 15,
+          "text": "A four_year_old child answered the door.",
+          "options": ["hyphen", "en-dash", "em-dash"],
+          "answer": "hyphen",
+          "explanation": "Hyphens in compound adjectives before a noun (four-year-old)."
+        },
+        {
+          "id": 16,
+          "text": "She had long_term plans for the business.",
+          "options": ["hyphen", "en-dash", "em-dash"],
+          "answer": "hyphen",
+          "explanation": "Compound adjective 'long-term' before noun requires hyphen."
+        },
+        {
+          "id": 17,
+          "text": "The pony_tailed girl ran across the field.",
+          "options": ["hyphen", "en-dash", "em-dash"],
+          "answer": "hyphen",
+          "explanation": "Compound adjective 'pony-tailed' before noun requires hyphen."
+        },
+        {
+          "id": 18,
+          "text": "It was a decision_making process.",
+          "options": ["hyphen", "en-dash", "em-dash"],
+          "answer": "hyphen",
+          "explanation": "Compound adjective 'decision-making' before noun requires hyphen."
+        },
+        {
+          "id": 19,
+          "text": "They hired a part_time employee.",
+          "options": ["hyphen", "en-dash", "em-dash"],
+          "answer": "hyphen",
+          "explanation": "Compound adjective 'part-time' before noun requires hyphen."
+        },
+        {
+          "id": 20,
+          "text": "He gave a thought_provoking speech.",
+          "options": ["hyphen", "en-dash", "em-dash"],
+          "answer": "hyphen",
+          "explanation": "Compound adjective 'thought-provoking' before noun requires hyphen."
+        }
+      ]
+    },
+    {
+      "id": "2.3",
+      "title": "Dialogue Markup",
+      "type": "dialogue-correction",
+      "instructions": "Each passage contains dialogue punctuation errors. Find and correct all errors.",
+      "items": [
+        {
+          "id": 1,
+          "text": "\"I'm leaving now,\" she said.",
+          "errors": [
+            {"error": "double quotes", "correction": "single quotes"}
+          ],
+          "corrected": "'I'm leaving now,' she said.",
+          "explanation": "British standard uses single quotation marks for dialogue."
+        },
+        {
+          "id": 2,
+          "text": "'I'm tired.' He said.",
+          "errors": [
+            {"error": "full stop before speech tag", "correction": "comma"},
+            {"error": "capitalised 'He'", "correction": "lowercase 'he'"}
+          ],
+          "corrected": "'I'm tired,' he said.",
+          "explanation": "Speech tag is part of the same sentence — use comma, lowercase."
+        },
+        {
+          "id": 3,
+          "text": "'What time is it?' She asked.",
+          "errors": [
+            {"error": "capitalised 'She'", "correction": "lowercase 'she'"}
+          ],
+          "corrected": "'What time is it?' she asked.",
+          "explanation": "Question mark stays, but speech tag is still lowercase."
+        },
+        {
+          "id": 4,
+          "text": "'I'm leaving,' He walked to the door.",
+          "errors": [
+            {"error": "comma before action beat", "correction": "full stop"},
+            {"error": "this might be intentional if 'He walked' is action beat", "correction": "verify"}
+          ],
+          "corrected": "'I'm leaving.' He walked to the door.",
+          "explanation": "Action beat (not a speech tag) — use full stop, capitalise."
+        },
+        {
+          "id": 5,
+          "text": "She said 'I'll be back soon'.",
+          "errors": [
+            {"error": "missing comma after 'said'", "correction": "add comma"},
+            {"error": "full stop outside quote", "correction": "inside for dialogue"}
+          ],
+          "corrected": "She said, 'I'll be back soon.'",
+          "explanation": "Comma after speech tag introducing dialogue. Full stop inside for direct speech."
+        },
+        {
+          "id": 6,
+          "text": "'I don't know—' she paused '—what to do.'",
+          "errors": [
+            {"error": "missing comma/punctuation before 'she paused'", "correction": "structure the interruption correctly"}
+          ],
+          "corrected": "'I don't know' — she paused — 'what to do.'",
+          "explanation": "Interruption in dialogue: close quote, em-dash, action, em-dash, open quote."
+        },
+        {
+          "id": 7,
+          "text": "'He told me, \"Don't be late.\"' she said.",
+          "errors": [
+            {"error": "comma needed before 'she said'", "correction": "add comma after closing quote"}
+          ],
+          "corrected": "'He told me, \"Don't be late,\"' she said.",
+          "explanation": "Nested quote: single outside, double inside. Comma before speech tag."
+        },
+        {
+          "id": 8,
+          "text": "'Wait' she shouted, 'I'm coming too'!",
+          "errors": [
+            {"error": "missing comma after 'Wait'", "correction": "add comma"},
+            {"error": "exclamation mark outside quote", "correction": "inside"}
+          ],
+          "corrected": "'Wait,' she shouted, 'I'm coming too!'",
+          "explanation": "Comma after first speech segment. Exclamation mark inside closing quote."
+        },
+        {
+          "id": 9,
+          "text": "'I've been thinking about what you said. About the house, I mean. Perhaps you're right.'\n\n'What do you mean,' he asked?",
+          "errors": [
+            {"error": "comma before 'he asked'", "correction": "question mark belongs with the speech"},
+            {"error": "question mark after 'asked'", "correction": "should be inside quotes"}
+          ],
+          "corrected": "'I've been thinking about what you said. About the house, I mean. Perhaps you're right.'\n\n'What do you mean?' he asked.",
+          "explanation": "Question mark inside the quote, then lowercase speech tag with full stop."
+        },
+        {
+          "id": 10,
+          "text": "'I want to tell you something important.\n\n'It happened many years ago, before you were born.\n\n'And I've never told anyone else.'",
+          "errors": [
+            {"error": "closing quotes at end of first two paragraphs", "correction": "no closing quotes until final paragraph"}
+          ],
+          "corrected": "'I want to tell you something important.\n\n'It happened many years ago, before you were born.\n\n'And I've never told anyone else.'",
+          "note": "This is actually correct — the sample shows the rule. Opening quotes on each paragraph, closing only at the end.",
+          "explanation": "Multi-paragraph speech: open quotes at start of each paragraph, close quotes only at the final paragraph."
+        }
+      ]
+    },
+    {
+      "id": "2.4",
+      "title": "Mixed Punctuation Paragraph",
+      "type": "passage-proof",
+      "instructions": "Each paragraph contains multiple punctuation errors. Find and mark all of them.",
+      "items": [
+        {
+          "id": 1,
+          "text": "\"Are you coming to the party\"? she asked. He shrugged, \"I'm not sure,\" He replied \"it depends on work.\" The truth was, he didnt want to go, but he couldnt say that.",
+          "errors": [
+            {"error": "double quotes", "correction": "single quotes", "count": 4},
+            {"error": "question mark outside quote", "correction": "inside", "position": "after 'party'"},
+            {"error": "comma after 'sure'", "correction": "full stop (new sentence starting with 'He replied')", "position": "after 'sure'"},
+            {"error": "capitalised 'He'", "correction": "lowercase or restructure"},
+            {"error": "missing comma", "correction": "comma after 'replied'"},
+            {"error": "didnt", "correction": "didn't"},
+            {"error": "couldnt", "correction": "couldn't"}
+          ],
+          "corrected": "'Are you coming to the party?' she asked. He shrugged. 'I'm not sure,' he replied, 'it depends on work.' The truth was, he didn't want to go, but he couldn't say that.",
+          "total_errors": 7
+        },
+        {
+          "id": 2,
+          "text": "The journey from London—Paris took longer than expected. She had packed three things; her passport, her phone, and a book. 'I should have checked the times' she muttered. The train, which was supposed to leave at 9am had been delayed.",
+          "errors": [
+            {"error": "em-dash for London–Paris", "correction": "en-dash (connection between places)"},
+            {"error": "semicolon before list", "correction": "colon (introducing a list)"},
+            {"error": "missing comma after closing quote", "correction": "comma before 'she muttered'"},
+            {"error": "missing comma after '9am'", "correction": "comma to close non-restrictive clause"}
+          ],
+          "corrected": "The journey from London–Paris took longer than expected. She had packed three things: her passport, her phone, and a book. 'I should have checked the times,' she muttered. The train, which was supposed to leave at 9 a.m., had been delayed.",
+          "total_errors": 4
+        },
+        {
+          "id": 3,
+          "text": "He was a well known author; famous for his crime novels. 'Stop'! she shouted. 'Don't go in there. Its dangerous.' However he ignored her, he walked straight through the door. The room was empty—or so it seemed—at first.",
+          "errors": [
+            {"error": "missing hyphen in 'well known'", "correction": "well-known (compound adjective before noun)"},
+            {"error": "semicolon after 'author'", "correction": "comma (not two independent clauses)"},
+            {"error": "exclamation mark outside quote", "correction": "inside"},
+            {"error": "Its", "correction": "It's (it is)"},
+            {"error": "missing comma after 'However'", "correction": "comma after introductory adverb"},
+            {"error": "comma splice after 'her'", "correction": "full stop or semicolon"}
+          ],
+          "corrected": "He was a well-known author, famous for his crime novels. 'Stop!' she shouted. 'Don't go in there. It's dangerous.' However, he ignored her. He walked straight through the door. The room was empty — or so it seemed — at first.",
+          "total_errors": 6
+        }
+      ]
+    }
+  ]
+}
